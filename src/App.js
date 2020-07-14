@@ -4,14 +4,13 @@ import { StyleSheet, View } from "react-native";
 import StorybookUI from "./storybook";
 import { ThemeProvider } from "styled-components";
 import { registerRootComponent } from "expo";
-// TODO: Figure out how to absolute import with module-resolver!
-import { theme, Text } from "./ui-kit";
+import { theme, Text } from "ui-kit";
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <View style={styles.container}>
-        <Text color="yellow">Open up App.js to start working on your app!</Text>
+        <Text color="blue">Open up App.js to start working on your app!</Text>
         <StatusBar style="auto" />
         <StorybookUI />
       </View>
