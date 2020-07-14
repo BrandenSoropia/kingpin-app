@@ -19,3 +19,12 @@ Once all of the above is setup and installed:
 1. Clone this repo and navigate to it.
 2. Run `expo start` or `yarn start`. This will open a browser with a helpful Expo dashboard to monitor and run simulators of the app.
 3. On the left side control panel, choose your mobile simulator or open up your phone's QR scanner to see the app in action!
+
+# Debugging
+
+You'll need to React Devtools standalone. You can get the [full setup docs here](https://reactnative.dev/docs/debugging#react-developer-tools).
+
+1. Install React Devtools by running `npm install -g react-devtools`.
+2. Make sure you have a simulator running. I'll be using iOS primarily.
+3. Run `react-devtools`. The Dev Tools window should open and prompt you to open the in-app dev menu. On iOS that is done with `Command + Control + Z`.
+4. In the simulator's in-app dev menu, click "Debug Remote JS". You might have to toggle it off then on again to actually get it to work!
