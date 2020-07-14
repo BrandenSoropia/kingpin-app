@@ -20,6 +20,15 @@ Once all of the above is setup and installed:
 2. Run `expo start` or `yarn start`. This will open a browser with a helpful Expo dashboard to monitor and run simulators of the app.
 3. On the left side control panel, choose your mobile simulator or open up your phone's QR scanner to see the app in action!
 
+This app also includes Storybook which is viewable in app! (Note to self: Hide Storybook in production and make sure storybook code is removed from production if it's included!)
+The process for Storybook + React Native is a little tedious where you need to require each story directly and reload the app... To help streamline that a bit, storybook reloader is included. Here's the steps to add and view these new stories:
+
+> Note: Storybook + React Native only supports old storybook format. [Read more about this at the bottom the the "Basic Story" Section here.](https://storybook.js.org/docs/basics/writing-stories/#loading-stories)
+
+1. Add a story anywhere within `./src`. It must end in `*.stories.js`, like `Details.stories.js`.
+2. Run `yarn loadstories`. This will auto-generate all paths to all stories anywhere within `./src`.
+3. Have your app running in simulator or on device and refresh/reload it (`Command + R` on iOS simulator, or via pressing "Reload" in the in-app dev menu). You should now see the new stories!
+
 # Debugging
 
 You'll need to React Devtools standalone. You can get the [full setup docs here](https://reactnative.dev/docs/debugging#react-developer-tools).

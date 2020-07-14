@@ -11,6 +11,7 @@ module.exports = function (api) {
           extensions: [".ios.js", ".android.js", ".js", ".json"],
           alias: {
             "ui-kit": "./src/ui-kit",
+            assets: "./src/assets",
           },
         },
       ],
