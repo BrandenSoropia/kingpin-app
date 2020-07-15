@@ -20,6 +20,8 @@ Once all of the above is setup and installed:
 2. Run `expo start` or `yarn start`. This will open a browser with a helpful Expo dashboard to monitor and run simulators of the app.
 3. On the left side control panel, choose your mobile simulator or open up your phone's QR scanner to see the app in action!
 
+## Storybook Development
+
 This app also includes Storybook which is viewable in app! (Note to self: Hide Storybook in production and make sure storybook code is removed from production if it's included!)
 The process for Storybook + React Native is a little tedious where you need to require each story directly and reload the app... To help streamline that a bit, storybook reloader is included. Here's the steps to add and view these new stories:
 
@@ -41,3 +43,4 @@ You'll need to React Devtools standalone. You can get the [full setup docs here]
 # Other Helpful Dev Notes
 
 - Absolute imports are setup via `babel-plugin-module-resolver`. You can find and edit its configuration in `babel.config.js`
+- To fully clean Expo + watchman, kill Expo then run `watchman watch-del-all`. Then restart Expo by running `expo start -c`. [Source](https://github.com/facebook/react-native/issues/26687#issuecomment-537504575)

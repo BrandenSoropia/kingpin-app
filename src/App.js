@@ -1,31 +1,20 @@
 import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, View } from "react-native";
 import StorybookUI from "./storybook";
 import { ThemeProvider } from "styled-components";
 import { registerRootComponent } from "expo";
-import { theme, Text } from "ui-kit";
+import { theme, Flex } from "ui-kit";
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <View style={styles.container}>
-        <Text color="blue">Open up App.js to start working on your app!</Text>
+      <Flex flex={1}>
         <StatusBar style="auto" />
         <StorybookUI />
-      </View>
+      </Flex>
     </ThemeProvider>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
 
 registerRootComponent(App);
 

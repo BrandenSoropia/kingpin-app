@@ -1,19 +1,48 @@
 import React from "react";
-import { View } from "react-native";
-import { Box, Text, Image } from "ui-kit";
+import { Box, Flex, Title, Body, Image, Callout } from "ui-kit";
 import PropTypes from "prop-types";
 
-const Details = ({ name, profilePicture, mockImage }) => {
+/**
+ *
+ * @param {string} tagline max 60 characters. Based off of https://moz.com/learn/seo/title-tag#:~:text=Optimal%20title%20length,your%20titles%20to%20display%20properly.
+ * @param {string} description handles newline breaks.
+ */
+const Details = ({
+  name,
+  profilePicture,
+  mockImage,
+  tagline,
+  instagramHandle,
+}) => {
   return (
-    <Box>
+    <Flex display="flex" flexDirection="row" paddingX="three">
       <Image
         uri={profilePicture}
         {...(mockImage && { source: mockImage })}
-        width={50}
-        height={50}
+        width={160}
+        height={160}
+        borderRadius="round"
       />
-      <Text>{name}</Text>
-    </Box>
+      <Flex flexShrink={1} paddingLeft="two" margin="auto">
+        <Title marginBottom="half">{name}</Title>
+        {/* TODO: Make this clickable and opens in Instagram */}
+        {instagramHandle && (
+          <Callout color="grey" marginBottom="half">
+            {instagramHandle}
+          </Callout>
+        )}
+        <Box
+          borderColor="grey"
+          borderRadius="round"
+          borderTopLeftRadius="none"
+          borderWidth="thin"
+          paddingX="one"
+          paddingY="half"
+        >
+          <Body>{tagline || "Add a tagline!"}</Body>
+        </Box>
+      </Flex>
+    </Flex>
   );
 };
 
@@ -21,6 +50,15 @@ Details.propTypes = {
   name: PropTypes.string.isRequired,
   profilePicture: PropTypes.string,
   mockImage: PropTypes.number,
+  tagline: PropTypes.string,
+  instagramHandle: PropTypes.string,
+};
+
+Details.defaultProps = {
+  profilePicture: "",
+  mockImage: null,
+  tagline: "",
+  instagramHandle: "",
 };
 
 export default Details;
