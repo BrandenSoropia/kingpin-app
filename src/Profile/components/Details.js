@@ -38,14 +38,12 @@ const Details = ({ name, profilePicture, tagline, socialMediaHandle }) => {
 Details.propTypes = {
   name: PropTypes.string.isRequired,
   profilePicture: PropTypes.string,
-  mockImage: PropTypes.number,
   tagline: PropTypes.string,
   socialMediaHandle: PropTypes.string,
 };
 
 Details.defaultProps = {
   profilePicture: "",
-  mockImage: null,
   tagline: "",
   socialMediaHandle: null,
 };
