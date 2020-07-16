@@ -15,7 +15,7 @@ const Details = ({
   instagramHandle,
 }) => {
   return (
-    <Flex display="flex" flexDirection="row" paddingX="three">
+    <Flex display="flex" flexDirection="row">
       <Image
         uri={profilePicture}
         {...(mockImage && { source: mockImage })}

@@ -1,12 +1,15 @@
 import React from "react";
 import { Details } from "./components";
-import { Flex } from "ui-kit";
+import { Flex, PrimaryTouchableOpacity, Body } from "ui-kit";
 import PropTypes from "prop-types";
 
 const Profile = ({ profile }) => {
   return (
-    <Flex flex={1}>
+    <Flex flex={1} marginX="three">
       <Details {...profile} />
+      <PrimaryTouchableOpacity marginTop="two">
+        <Body textAlign="center">Edit Profile</Body>
+      </PrimaryTouchableOpacity>
     </Flex>
   );
 };
