@@ -7,7 +7,7 @@ storiesOf("Profile/Details", module)
     <Details
       name="Angry Brock"
       mockImage={require("assets/mock-profile.jpg")}
-      instagramHandle="@brock_the_hustler"
+      socialMediaHandle="@brock_the_hustler"
       tagline="Raised on the Streets. Pro Hustler."
     />
   ))
@@ -15,7 +15,7 @@ storiesOf("Profile/Details", module)
     <Details
       name="ReallyAngry BrockTheCat"
       mockImage={require("assets/mock-profile.jpg")}
-      instagramHandle="@brock_the_hustler"
+      socialMediaHandle="@brock_the_hustler"
       tagline="Pro Hustler. Cute Cat. Picky Eater. Bug Hunter. Energizer Cat."
     />
   ));

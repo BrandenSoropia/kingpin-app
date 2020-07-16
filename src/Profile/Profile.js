@@ -25,7 +25,7 @@ Profile.propTypes = {
     profilePicture: PropTypes.string,
     mockImage: PropTypes.number,
     tagline: PropTypes.string,
-    instagramHandle: PropTypes.string,
+    socialMediaHandle: PropTypes.string,
   }).isRequired,
   navigation: PropTypes.shape({
     navigate: PropTypes.func,

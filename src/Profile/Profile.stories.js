@@ -7,7 +7,7 @@ storiesOf("Profile", module).add("View Profile", () => (
     profile={{
       name: "Angry Brock",
       mockImage: require("assets/mock-profile.jpg"),
-      instagramHandle: "@brock_the_hustler",
+      socialMediaHandle: "@brock_the_hustler",
       tagline: "Raised on the Streets. Pro Hustler.",
     }}
   />

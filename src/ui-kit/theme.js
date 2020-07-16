@@ -12,6 +12,7 @@ const radii = {
 };
 
 const borderWidths = {
+  none: 0,
   thin: 1,
 };
 

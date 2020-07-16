@@ -12,12 +12,12 @@ const Details = ({
   profilePicture,
   mockImage,
   tagline,
-  instagramHandle,
+  socialMediaHandle,
 }) => {
   return (
-    <Flex display="flex" flexDirection="row">
+    <Flex flexDirection="row">
       <Image
-        uri={profilePicture}
+        {...(profilePicture && { uri: profilePicture })}
         {...(mockImage && { source: mockImage })}
         width={160}
         height={160}
@@ -26,9 +26,9 @@ const Details = ({
       <Flex flexShrink={1} paddingLeft="two" margin="auto">
         <Title marginBottom="half">{name}</Title>
         {/* TODO: Make this clickable and opens in Instagram */}
-        {instagramHandle && (
+        {socialMediaHandle && (
           <Callout color="grey" marginBottom="half">
-            {instagramHandle}
+            {socialMediaHandle}
           </Callout>
         )}
         <Box
@@ -51,14 +51,14 @@ Details.propTypes = {
   profilePicture: PropTypes.string,
   mockImage: PropTypes.number,
   tagline: PropTypes.string,
-  instagramHandle: PropTypes.string,
+  socialMediaHandle: PropTypes.string,
 };
 
 Details.defaultProps = {
   profilePicture: "",
   mockImage: null,
   tagline: "",
-  instagramHandle: null,
+  socialMediaHandle: null,
 };
 
 export default Details;
