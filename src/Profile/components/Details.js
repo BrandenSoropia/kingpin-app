@@ -58,7 +58,7 @@ Details.defaultProps = {
   profilePicture: "",
   mockImage: null,
   tagline: "",
-  instagramHandle: "",
+  instagramHandle: null,
 };
 
 export default Details;

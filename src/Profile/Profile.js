@@ -3,11 +3,16 @@ import { Details } from "./components";
 import { Flex, PrimaryTouchableOpacity, Body } from "ui-kit";
 import PropTypes from "prop-types";
 
-const Profile = ({ profile }) => {
+const Profile = ({ profile, navigation }) => {
   return (
     <Flex flex={1} marginX="three">
       <Details {...profile} />
-      <PrimaryTouchableOpacity marginTop="two">
+      <PrimaryTouchableOpacity
+        marginTop="two"
+        onPress={() => {
+          navigation.navigate("Edit Profile");
+        }}
+      >
         <Body textAlign="center">Edit Profile</Body>
       </PrimaryTouchableOpacity>
     </Flex>
@@ -21,6 +26,9 @@ Profile.propTypes = {
     mockImage: PropTypes.number,
     tagline: PropTypes.string,
     instagramHandle: PropTypes.string,
+  }).isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func,
   }).isRequired,
 };
 
