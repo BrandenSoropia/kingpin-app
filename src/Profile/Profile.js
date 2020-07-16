@@ -23,7 +23,6 @@ Profile.propTypes = {
   profile: PropTypes.shape({
     name: PropTypes.string.isRequired,
     profilePicture: PropTypes.string,
-    mockImage: PropTypes.number,
     tagline: PropTypes.string,
     socialMediaHandle: PropTypes.string,
   }).isRequired,

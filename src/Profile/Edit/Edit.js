@@ -1,24 +1,17 @@
 import React, { useState } from "react";
 import {
   Box,
-  Flex,
   Body,
   Image,
-  TextInput,
   PrimaryTouchableOpacity,
   DismissKeyboardBox,
 } from "ui-kit";
 import PropTypes from "prop-types";
 import { Keyboard } from "react-native";
 import { TextInputSection } from "./components";
+import { ProfileIcon } from "common/components";
 
-const Edit = ({
-  name,
-  profilePicture,
-  mockImage,
-  tagline,
-  socialMediaHandle,
-}) => {
+const Edit = ({ name, profilePicture, tagline, socialMediaHandle }) => {
   const [updatedName, setUpdatedName] = useState(name);
   const [updatedTagline, setUpdatedTagline] = useState(tagline);
   const [updatedSocialMediaHandle, setUpdatedSocialMediaHandle] = useState(
@@ -26,17 +19,9 @@ const Edit = ({
   );
 
   return (
-    <DismissKeyboardBox>
+    <DismissKeyboardBox height="100%" paddingX="two" paddingY="two">
       <Box>
-        <Image
-          {...(profilePicture && { uri: profilePicture })}
-          {...(mockImage && { source: mockImage })}
-          width={160}
-          height={160}
-          borderRadius="round"
-          alignSelf="center"
-          marginBottom="one"
-        />
+        <ProfileIcon profilePicture={profilePicture} />
         <PrimaryTouchableOpacity
           borderWidth="none"
           onPress={() => {
@@ -46,21 +31,23 @@ const Edit = ({
           <Body textAlign="center">Change Profile Picture</Body>
         </PrimaryTouchableOpacity>
       </Box>
-      <TextInputSection
-        label="Name"
-        value={updatedName}
-        onChangeText={setUpdatedName}
-      />
-      <TextInputSection
-        label="Social Media"
-        value={updatedSocialMediaHandle}
-        onChangeText={setUpdatedSocialMediaHandle}
-      />
-      <TextInputSection
-        label="Tagline"
-        value={updatedTagline}
-        onChangeText={setUpdatedTagline}
-      />
+      <Box>
+        <TextInputSection
+          label="Name"
+          value={updatedName}
+          onChangeText={setUpdatedName}
+        />
+        <TextInputSection
+          label="Social Media"
+          value={updatedSocialMediaHandle}
+          onChangeText={setUpdatedSocialMediaHandle}
+        />
+        <TextInputSection
+          label="Tagline"
+          value={updatedTagline}
+          onChangeText={setUpdatedTagline}
+        />
+      </Box>
     </DismissKeyboardBox>
   );
 };
@@ -68,9 +55,14 @@ const Edit = ({
 Edit.propTypes = {
   name: PropTypes.string.isRequired,
   profilePicture: PropTypes.string,
-  mockImage: PropTypes.number,
   tagline: PropTypes.string,
   socialMediaHandle: PropTypes.string,
+};
+
+Edit.defaultProps = {
+  profilePicture: null,
+  tagline: "",
+  socialMediaHandle: "",
 };
 
 export default Edit;

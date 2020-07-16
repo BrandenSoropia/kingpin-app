@@ -1,6 +1,6 @@
 import React from "react";
 import { TouchableWithoutFeedback, Keyboard } from "react-native";
-import { Box } from "ui-kit";
+import Box from "./Box";
 
 /**
  * Seems we need to use React Native's Keyboard API to explicitly dismiss

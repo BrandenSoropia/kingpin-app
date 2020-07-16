@@ -1,4 +1,4 @@
-import { space, layout, color, typography } from "styled-system";
+import { space, layout, color, typography, flexbox } from "styled-system";
 import styled from "styled-components/native";
 
 /**
@@ -9,6 +9,7 @@ const Text = styled.Text`
   ${layout}
   ${color}
   ${typography}
+  ${flexbox}
 `;
 
 export default Text;

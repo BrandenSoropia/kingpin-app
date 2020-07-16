@@ -12,6 +12,7 @@ module.exports = function (api) {
           alias: {
             "ui-kit": "./src/ui-kit",
             assets: "./src/assets",
+            common: "./src/common",
           },
         },
       ],
