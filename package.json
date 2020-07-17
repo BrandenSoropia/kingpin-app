@@ -1,7 +1,7 @@
 {
   "main": "src/App.js",
   "scripts": {
-    "start": "expo start",
+    "start": "REACT_DEBUGGER=\"rndebugger-open --open --port 19001\" expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
@@ -10,7 +10,8 @@
     "storybook": "start-storybook -p 7007",
     "prestorybook": "rnstl",
     "test": "jest --watch --coverage=false --changedSince=origin/master",
-    "testDebug": "jest -o --watch --coverage=false"
+    "testDebug": "jest -o --watch --coverage=false",
+    "postinstall": "rndebugger-open"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.11.0",
@@ -45,6 +46,7 @@
     "babel-plugin-styled-components": "^1.10.7",
     "babel-preset-expo": "~8.1.0",
     "jest-expo": "^38.0.2",
+    "react-native-debugger-open": "^0.3.25",
     "react-native-storybook-loader": "^1.8.1"
   },
   "private": true,

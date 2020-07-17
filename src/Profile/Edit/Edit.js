@@ -1,19 +1,19 @@
 import React, { useState } from "react";
-import {
-  Box,
-  Body,
-  Image,
-  PrimaryTouchableOpacity,
-  DismissKeyboardBox,
-} from "ui-kit";
+import { Box, Body, PrimaryTouchableOpacity, DismissKeyboardBox } from "ui-kit";
 import PropTypes from "prop-types";
 import { Keyboard } from "react-native";
 import { TextInputSection } from "./components";
 import { ProfileIcon } from "common/components";
 
-const Edit = ({ name, profilePicture, tagline, socialMediaHandle }) => {
-  // TODO: Store this in Redux on save
-  // TODO: Add "Done" button to save all changes
+const Edit = ({
+  name,
+  profilePicture,
+  tagline,
+  socialMediaHandle,
+  setName,
+  // TODO: Finish storing all edits to Redux.
+}) => {
+  // TODO: Finish "Done" button to save all changes
   // Future TODO: Confirm back if unsaved changes
   const [updatedName, setUpdatedName] = useState(name);
   const [updatedTagline, setUpdatedTagline] = useState(tagline);
@@ -52,6 +52,14 @@ const Edit = ({ name, profilePicture, tagline, socialMediaHandle }) => {
           onChangeText={setUpdatedTagline}
         />
       </Box>
+      <PrimaryTouchableOpacity
+        onPress={() => {
+          console.log("### Hi");
+          setName(updatedName);
+        }}
+      >
+        <Body>Done</Body>
+      </PrimaryTouchableOpacity>
     </DismissKeyboardBox>
   );
 };
