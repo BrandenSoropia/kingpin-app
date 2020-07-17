@@ -8,15 +8,11 @@ import { theme, Flex, StorybookButton } from "ui-kit";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Profile } from "./Profile";
-import { Edit } from "./Profile/Edit";
-import { configureStore } from "@reduxjs/toolkit";
+import { ConnectedEdit } from "./Profile/Edit";
+import store from "./store";
 import { Provider } from "react-redux";
 
 const Stack = createStackNavigator();
-
-const store = configureStore({
-  reducer: () => {},
-});
 
 const App = () => {
   return (
@@ -34,7 +30,7 @@ const App = () => {
             />
             <Stack.Screen
               name="Edit Profile"
-              component={Edit}
+              component={ConnectedEdit}
               options={{
                 title: "Edit Profile",
                 headerRight: () => <StorybookButton />,

@@ -4,8 +4,8 @@ import reducer, {
   setTagline,
   setSocialMediaHandle,
   initialState,
-} from "../Profile.slice";
-import { mockProfilePictureURL } from "../__mocks__";
+} from "../slice";
+import { mockProfilePictureURL } from "../../__mocks__";
 
 describe("Profile Redux State Tests", () => {
   describe("Action Tests", () => {

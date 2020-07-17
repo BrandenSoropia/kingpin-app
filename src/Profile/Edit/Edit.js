@@ -20,6 +20,7 @@ const Edit = ({ name, profilePicture, tagline, socialMediaHandle }) => {
   const [updatedSocialMediaHandle, setUpdatedSocialMediaHandle] = useState(
     socialMediaHandle
   );
+  // TODO: Figure out how to update profile picture
 
   return (
     <DismissKeyboardBox height="100%" paddingX="two" paddingY="two">
