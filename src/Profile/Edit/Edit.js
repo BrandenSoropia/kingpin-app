@@ -12,6 +12,9 @@ import { TextInputSection } from "./components";
 import { ProfileIcon } from "common/components";
 
 const Edit = ({ name, profilePicture, tagline, socialMediaHandle }) => {
+  // TODO: Store this in Redux on save
+  // TODO: Add "Done" button to save all changes
+  // Future TODO: Confirm back if unsaved changes
   const [updatedName, setUpdatedName] = useState(name);
   const [updatedTagline, setUpdatedTagline] = useState(tagline);
   const [updatedSocialMediaHandle, setUpdatedSocialMediaHandle] = useState(

@@ -8,13 +8,16 @@
     "eject": "expo eject",
     "loadstories": "rnstl",
     "storybook": "start-storybook -p 7007",
-    "prestorybook": "rnstl"
+    "prestorybook": "rnstl",
+    "test": "jest --watch --coverage=false --changedSince=origin/master",
+    "testDebug": "jest -o --watch --coverage=false"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.11.0",
     "@react-native-community/masked-view": "0.1.10",
     "@react-navigation/native": "^5.7.0",
     "@react-navigation/stack": "^5.7.0",
+    "@reduxjs/toolkit": "^1.4.0",
     "expo": "~38.0.8",
     "expo-status-bar": "^1.0.2",
     "prop-types": "^15.7.2",
@@ -26,6 +29,7 @@
     "react-native-safe-area-context": "~3.0.7",
     "react-native-screens": "~2.9.0",
     "react-native-web": "~0.11.7",
+    "react-redux": "^7.2.0",
     "styled-components": "^5.1.1",
     "styled-system": "^5.1.5"
   },
@@ -40,6 +44,7 @@
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-styled-components": "^1.10.7",
     "babel-preset-expo": "~8.1.0",
+    "jest-expo": "^38.0.2",
     "react-native-storybook-loader": "^1.8.1"
   },
   "private": true,
@@ -54,5 +59,11 @@
       "pattern": "**/*.stories.js",
       "outputFile": "./src/storybook/storyLoader.js"
     }
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|react-clone-referenced-element|@react-native-community|expo(nent)?|@expo(nent)?/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|@sentry/.*)"
+    ]
   }
 }
