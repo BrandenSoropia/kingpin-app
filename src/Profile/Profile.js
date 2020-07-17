@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 const Profile = ({ profile, navigation }) => {
   return (
-    <Flex flex={1} marginX="three">
+    <Flex flex={1} paddingX="two" paddingY="two">
       <Details {...profile} />
       <PrimaryTouchableOpacity
         marginTop="two"
