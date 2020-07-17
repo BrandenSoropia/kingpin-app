@@ -40,6 +40,11 @@ You'll need to React Devtools standalone. You can get the [full setup docs here]
 3. Run `react-devtools`. The Dev Tools window should open and prompt you to open the in-app dev menu. On iOS that is done with `Command + Control + Z`.
 4. In the simulator's in-app dev menu, click "Debug Remote JS". You might have to toggle it off then on again to actually get it to work!
 
+# Testing
+
+To run and watch all tests, you can run `yarn test`.
+To do the same with debug on, run `yarn testDebug`.
+
 # Other Helpful Dev Notes
 
 - Absolute imports are setup via `babel-plugin-module-resolver`. You can find and edit its configuration in `babel.config.js`

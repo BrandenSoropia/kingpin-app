@@ -1,9 +1,12 @@
-import reducer, { setName, initialState } from "../Profile.slice";
+import reducer, {
+  setName,
+  setProfilePicture,
+  setTagline,
+  setSocialMediaHandle,
+  initialState,
+} from "../Profile.slice";
+import { mockProfilePictureURL } from "../__mocks__";
 
-/**
- * Since this is simple state management, going to leave it with just these 2 tests for now...
- * Just wanted to practice testing Redux!
- */
 describe("Profile Redux State Tests", () => {
   describe("Action Tests", () => {
     it("should return an action to set name", () => {
@@ -14,6 +17,33 @@ describe("Profile Redux State Tests", () => {
         },
       });
     });
+
+    it("should return an action to set profile picture", () => {
+      expect(setProfilePicture(mockProfilePictureURL)).toEqual({
+        type: "profile/setProfilePicture",
+        payload: {
+          profilePicture: mockProfilePictureURL,
+        },
+      });
+    });
+
+    it("should return an action to set tagline", () => {
+      expect(setTagline("Cool cat.")).toEqual({
+        type: "profile/setTagline",
+        payload: {
+          tagline: "Cool cat.",
+        },
+      });
+    });
+
+    it("should return an action to set social media handle", () => {
+      expect(setSocialMediaHandle("@brock_the_hustler")).toEqual({
+        type: "profile/setSocialMediaHandle",
+        payload: {
+          socialMediaHandle: "@brock_the_hustler",
+        },
+      });
+    });
   });
 
   describe("Reducer Tests", () => {
@@ -21,6 +51,31 @@ describe("Profile Redux State Tests", () => {
       expect(reducer(initialState, setName("Brock"))).toEqual({
         ...initialState,
         name: "Brock",
+      });
+    });
+
+    it("should handle set profile picture", () => {
+      expect(
+        reducer(initialState, setProfilePicture(mockProfilePictureURL))
+      ).toEqual({
+        ...initialState,
+        profilePicture: mockProfilePictureURL,
+      });
+    });
+
+    it("should handle set tag line", () => {
+      expect(reducer(initialState, setTagline("Cool cat."))).toEqual({
+        ...initialState,
+        tagline: "Cool cat.",
+      });
+    });
+
+    it("should handle set social media handle", () => {
+      expect(
+        reducer(initialState, setSocialMediaHandle("@brock_the_hustler"))
+      ).toEqual({
+        ...initialState,
+        socialMediaHandle: "@brock_the_hustler",
       });
     });
   });
