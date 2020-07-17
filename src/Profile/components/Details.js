@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Title, Body, Callout } from "ui-kit";
+import { View, Flex, Title, Body, Callout } from "ui-kit";
 import PropTypes from "prop-types";
 import { ProfileIcon } from "common/components";
 
@@ -20,7 +20,7 @@ const Details = ({ name, profilePicture, tagline, socialMediaHandle }) => {
             {socialMediaHandle}
           </Callout>
         )}
-        <Box
+        <View
           borderColor="grey"
           borderRadius="round"
           borderTopLeftRadius="none"
@@ -29,7 +29,7 @@ const Details = ({ name, profilePicture, tagline, socialMediaHandle }) => {
           paddingY="half"
         >
           <Body>{tagline || "Add a tagline!"}</Body>
-        </Box>
+        </View>
       </Flex>
     </Flex>
   );

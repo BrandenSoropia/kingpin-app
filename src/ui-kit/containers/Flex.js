@@ -1,8 +1,8 @@
 import styled from "styled-components/native";
-import Box from "./Box";
+import View from "./View";
 import { flexbox } from "styled-system";
 
-const Flex = styled(Box).attrs(() => ({
+const Flex = styled(View).attrs(() => ({
   display: "flex",
 }))`
   ${flexbox}

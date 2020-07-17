@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Body, PrimaryTouchableOpacity, ScrollView } from "ui-kit";
+import { View, Body, PrimaryTouchableOpacity, ScrollView } from "ui-kit";
 import PropTypes from "prop-types";
 import { TextInputSection } from "./components";
 import { ProfileIcon } from "common/components";
@@ -28,7 +28,7 @@ const Edit = ({
 
   return (
     <ScrollView paddingX="two" paddingY="two">
-      <Box>
+      <View>
         <ProfileIcon profilePicture={profilePicture} />
         <PrimaryTouchableOpacity
           borderWidth="none"
@@ -38,8 +38,8 @@ const Edit = ({
         >
           <Body textAlign="center">Change Profile Picture</Body>
         </PrimaryTouchableOpacity>
-      </Box>
-      <Box>
+      </View>
+      <View>
         <TextInputSection
           label="Name"
           value={updatedName}
@@ -55,7 +55,7 @@ const Edit = ({
           value={updatedTagline}
           onChangeText={setUpdatedTagline}
         />
-      </Box>
+      </View>
       <PrimaryTouchableOpacity
         marginTop="two"
         onPress={() => {
