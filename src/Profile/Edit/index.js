@@ -11,7 +11,7 @@ import {
   setSocialMediaHandle,
 } from "../state";
 
-export const ConnectedEdit = connect(
+export const EditContainer = connect(
   (state) => ({
     name: selectName(state),
     profilePicture: selectProfilePicture(state),

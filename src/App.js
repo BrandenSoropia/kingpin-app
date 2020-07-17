@@ -7,8 +7,8 @@ import { registerRootComponent } from "expo";
 import { theme, Flex, StorybookButton } from "ui-kit";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Profile } from "./Profile";
-import { ConnectedEdit } from "./Profile/Edit";
+import { ProfileContainer } from "./Profile";
+import { EditContainer } from "./Profile/Edit";
 import store from "./store";
 import { Provider } from "react-redux";
 
@@ -22,7 +22,7 @@ const App = () => {
           <Stack.Navigator>
             <Stack.Screen
               name="Profile"
-              component={Profile}
+              component={ProfileContainer}
               options={{
                 title: "Profile",
                 headerRight: () => <StorybookButton />,
@@ -30,7 +30,7 @@ const App = () => {
             />
             <Stack.Screen
               name="Edit Profile"
-              component={ConnectedEdit}
+              component={EditContainer}
               options={{
                 title: "Edit Profile",
                 headerRight: () => <StorybookButton />,

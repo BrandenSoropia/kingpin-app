@@ -8,6 +8,20 @@ storiesOf("Profile/Edit", module)
       name="Angry Brock"
       socialMediaHandle="@brock_the_hustler"
       tagline="Raised on the Streets. Pro Hustler."
+      setName={() => {}}
+      setProfilePicture={() => {}}
+      setTagline={() => {}}
+      setSocialMediaHandle={() => {}}
+      navigation={{ navigate: () => {} }}
     />
   ))
-  .add("With Only Name", () => <Edit name="Angry Brock" />);
+  .add("With Only Name", () => (
+    <Edit
+      name="Angry Brock"
+      setName={() => {}}
+      setProfilePicture={() => {}}
+      setTagline={() => {}}
+      setSocialMediaHandle={() => {}}
+      navigation={{ navigate: () => {} }}
+    />
+  ));

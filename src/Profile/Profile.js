@@ -3,10 +3,21 @@ import { Details } from "./components";
 import { Flex, PrimaryTouchableOpacity, Body } from "ui-kit";
 import PropTypes from "prop-types";
 
-const Profile = ({ profile, navigation }) => {
+const Profile = ({
+  name,
+  profilePicture,
+  tagline,
+  socialMediaHandle,
+  navigation,
+}) => {
   return (
     <Flex flex={1} paddingX="two" paddingY="two">
-      <Details {...profile} />
+      <Details
+        name={name}
+        profilePicture={profilePicture}
+        tagline={tagline}
+        socialMediaHandle={socialMediaHandle}
+      />
       <PrimaryTouchableOpacity
         marginTop="two"
         onPress={() => {
@@ -20,12 +31,10 @@ const Profile = ({ profile, navigation }) => {
 };
 
 Profile.propTypes = {
-  profile: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    profilePicture: PropTypes.string,
-    tagline: PropTypes.string,
-    socialMediaHandle: PropTypes.string,
-  }).isRequired,
+  name: PropTypes.string.isRequired,
+  profilePicture: PropTypes.string,
+  tagline: PropTypes.string,
+  socialMediaHandle: PropTypes.string,
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
   }).isRequired,

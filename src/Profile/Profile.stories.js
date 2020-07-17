@@ -4,10 +4,9 @@ import Profile from "./Profile";
 
 storiesOf("Profile", module).add("View Profile", () => (
   <Profile
-    profile={{
-      name: "Angry Brock",
-      socialMediaHandle: "@brock_the_hustler",
-      tagline: "Raised on the Streets. Pro Hustler.",
-    }}
+    name="Angry Brock"
+    socialMediaHandle="@brock_the_hustler"
+    tagline="Raised on the Streets. Pro Hustler."
+    navigation={{ navigate: () => {} }}
   />
 ));
