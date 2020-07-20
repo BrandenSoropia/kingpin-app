@@ -1,12 +1,13 @@
 import React from "react";
 import { Image } from "ui-kit";
 import PropTypes from "prop-types";
+const ProfilePictureImageFallback = require("assets/mock-profile.jpg");
 
 const ProfileIcon = ({ profilePicture }) => (
   <Image
-    {...(profilePicture
-      ? { uri: profilePicture }
-      : { source: require("assets/mock-profile.jpg") })}
+    source={
+      (profilePicture && { uri: profilePicture }) || ProfilePictureImageFallback
+    }
     width={160}
     height={160}
     borderRadius="round"

@@ -44,7 +44,7 @@ If for some reason the Debugger is not opening/not connecting, kill the simulato
 # Testing
 
 To run and watch all tests, you can run `yarn test`.
-To do the same with debug on, run `yarn testDebug`.
+To do the same with debug on, run `yarn testdebug`.
 
 # Other Helpful Dev Notes
 

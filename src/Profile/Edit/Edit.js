@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { View, Body, PrimaryTouchableOpacity, ScrollView } from "ui-kit";
 import PropTypes from "prop-types";
 import { TextInputSection } from "./components";
 import { ProfileIcon } from "common/components";
+import { useImagePickerPermissions, asyncPickImage } from "common/helpers";
 
 const Edit = ({
   name,
@@ -22,18 +23,28 @@ const Edit = ({
     socialMediaHandle
   );
   // TODO: Figure out how to update profile picture
+  // Use https://docs.expo.io/versions/latest/sdk/imagepicker/. It's installed already
   const [updatedProfilePicture, setUpdatedProfilePicture] = useState(
     profilePicture
   );
 
+  useImagePickerPermissions();
+
   return (
     <ScrollView paddingX="two" paddingY="two">
       <View>
-        <ProfileIcon profilePicture={profilePicture} />
+        <ProfileIcon profilePicture={updatedProfilePicture} />
         <PrimaryTouchableOpacity
           borderWidth="none"
           onPress={() => {
-            a;
+            asyncPickImage()
+              .then((result) => {
+                console.log("#result ", result);
+                setUpdatedProfilePicture(result.uri);
+              })
+              .catch((error) => {
+                alert(error);
+              });
           }}
         >
           <Body textAlign="center">Change Profile Picture</Body>
