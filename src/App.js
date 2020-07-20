@@ -11,6 +11,7 @@ import { EditContainer } from "./Profile/Edit";
 import store from "./store";
 import { Provider } from "react-redux";
 import { ActionSheetProvider } from "@expo/react-native-action-sheet";
+import { StatusBar } from "expo-status-bar";
 
 const Stack = createStackNavigator();
 
@@ -20,6 +21,7 @@ const App = () => {
       <NavigationContainer initialRouteName="Storybook">
         <ThemeProvider theme={theme}>
           <Provider store={store}>
+            <StatusBar />
             <Stack.Navigator>
               <Stack.Screen
                 name="Profile"
