@@ -7,6 +7,7 @@ storiesOf("Profile", module).add("View Profile", () => (
     name="Angry Brock"
     socialMediaHandle="@brock_the_hustler"
     tagline="Raised on the Streets. Pro Hustler."
+    homeSkatepark="Dunbat Skatepark"
     navigation={{ navigate: () => {} }}
   />
 ));

@@ -8,6 +8,7 @@ const Profile = ({
   profilePicture,
   tagline,
   socialMediaHandle,
+  homeSkatepark,
   navigation,
 }) => {
   return (
@@ -17,6 +18,7 @@ const Profile = ({
         profilePicture={profilePicture}
         tagline={tagline}
         socialMediaHandle={socialMediaHandle}
+        homeSkatepark={homeSkatepark}
       />
       <PrimaryTouchableOpacity
         marginTop="two"
@@ -38,6 +40,14 @@ Profile.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
   }).isRequired,
+  homeSkatepark: PropTypes.string,
+};
+
+Profile.defaultProps = {
+  profilePicture: null,
+  tagline: null,
+  socialMediaHandle: null,
+  homeSkatepark: null,
 };
 
 export default Profile;

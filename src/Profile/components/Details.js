@@ -8,30 +8,32 @@ import { ProfileIcon } from "common/components";
  * @param {string} tagline max 60 characters. Based off of https://moz.com/learn/seo/title-tag#:~:text=Optimal%20title%20length,your%20titles%20to%20display%20properly.
  * @param {string} description handles newline breaks.
  */
-const Details = ({ name, profilePicture, tagline, socialMediaHandle }) => {
+const Details = ({
+  name,
+  profilePicture,
+  tagline,
+  socialMediaHandle,
+  homeSkatepark,
+}) => {
   return (
-    <Flex flexDirection="row">
-      <ProfileIcon profilePicture={profilePicture} />
-      <Flex flexShrink={1} paddingLeft="two" margin="auto">
-        <Title marginBottom="half">{name}</Title>
-        {/* TODO: Make this clickable and opens in Instagram */}
-        {socialMediaHandle && (
-          <Callout color="grey" marginBottom="half">
-            {socialMediaHandle}
-          </Callout>
-        )}
-        <View
-          borderColor="grey"
-          borderRadius="round"
-          borderTopLeftRadius="none"
-          borderWidth="thin"
-          paddingX="one"
-          paddingY="half"
-        >
-          <Body>{tagline || "Add a tagline!"}</Body>
-        </View>
+    <View>
+      <Flex flexDirection="row" marginBottom="two">
+        <ProfileIcon profilePicture={profilePicture} />
+        <Flex flexShrink={1} marginLeft="three" alignSelf="center">
+          <Title marginBottom="one">{name}</Title>
+          {/* TODO: Make this clickable and opens in Instagram */}
+          {socialMediaHandle && (
+            <Callout color="grey" marginBottom="half">
+              👤 {socialMediaHandle}
+            </Callout>
+          )}
+          {homeSkatepark && <Body marginBottom="half">🏠 {homeSkatepark}</Body>}
+        </Flex>
       </Flex>
-    </Flex>
+      <View paddingX="one" paddingY="half">
+        <Body>{tagline || "Add a tagline!"}</Body>
+      </View>
+    </View>
   );
 };
 
@@ -40,12 +42,14 @@ Details.propTypes = {
   profilePicture: PropTypes.string,
   tagline: PropTypes.string,
   socialMediaHandle: PropTypes.string,
+  homeSkatepark: PropTypes.string,
 };
 
 Details.defaultProps = {
-  profilePicture: "",
-  tagline: "",
+  profilePicture: null,
+  tagline: null,
   socialMediaHandle: null,
+  homeSkatepark: null,
 };
 
 export default Details;

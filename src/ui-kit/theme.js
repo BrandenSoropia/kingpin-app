@@ -9,6 +9,7 @@ const colors = {
 const radii = {
   none: 0,
   round: 20,
+  circle: 9999,
 };
 
 const borderWidths = {

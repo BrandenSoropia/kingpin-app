@@ -8,11 +8,10 @@ const ProfileIcon = ({ profilePicture }) => (
     source={
       (profilePicture && { uri: profilePicture }) || ProfilePictureImageFallback
     }
-    width={160}
-    height={160}
-    borderRadius="round"
+    width={100}
+    height={100}
+    borderRadius="circle"
     alignSelf="center"
-    marginBottom="one"
   />
 );
 

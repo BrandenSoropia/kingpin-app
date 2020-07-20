@@ -8,6 +8,7 @@ storiesOf("Profile/Details", module)
       name="Angry Brock"
       socialMediaHandle="@brock_the_hustler"
       tagline="Raised on the Streets. Pro Hustler."
+      homeSkatepark="Dunbat Skatepark"
     />
   ))
   .add("With Long Details", () => (
@@ -15,5 +16,6 @@ storiesOf("Profile/Details", module)
       name="ReallyAngry BrockTheCat"
       socialMediaHandle="@brock_the_hustler"
       tagline="Pro Hustler. Cute Cat. Picky Eater. Bug Hunter. Energizer Cat."
+      homeSkatepark="Dunbat Skatepark"
     />
   ));
