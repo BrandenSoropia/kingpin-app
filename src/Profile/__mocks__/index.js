@@ -6,5 +6,6 @@ export const mockProfileAppState = {
     profilePicture: mockProfilePictureURL,
     tagline: "Cool cat.",
     socialMediaHandle: "@brock_the_hustler",
+    homeSkatepark: "Dunbat Skatepark",
   },
 };

@@ -5,6 +5,7 @@ export const initialState = {
   profilePicture: null,
   tagline: null,
   socialMediaHandle: null,
+  homeSkatepark: null,
 };
 
 const profileSlice = createSlice({
@@ -55,16 +56,26 @@ const profileSlice = createSlice({
         },
       }),
     },
+    setHomeSkatepark: {
+      reducer: (state, { payload }) => ({
+        ...state,
+        homeSkatepark: payload?.homeSkatepark,
+      }),
+      prepare: (homeSkatepark) => ({
+        payload: {
+          homeSkatepark,
+        },
+      }),
+    },
   },
 });
-
-const { actions, reducer } = profileSlice;
 
 export const {
   setName,
   setProfilePicture,
   setTagline,
   setSocialMediaHandle,
-} = actions;
+  setHomeSkatepark,
+} = profileSlice.actions;
 
-export default reducer;
+export const reducer = profileSlice.reducer;

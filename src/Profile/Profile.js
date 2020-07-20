@@ -2,6 +2,7 @@ import React from "react";
 import { Details } from "./components";
 import { Flex, PrimaryTouchableOpacity, Body } from "ui-kit";
 import PropTypes from "prop-types";
+import { profilePropTypes, profileDefaultProps } from "./prop-types";
 
 const Profile = ({
   name,
@@ -33,21 +34,14 @@ const Profile = ({
 };
 
 Profile.propTypes = {
-  name: PropTypes.string.isRequired,
-  profilePicture: PropTypes.string,
-  tagline: PropTypes.string,
-  socialMediaHandle: PropTypes.string,
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
   }).isRequired,
-  homeSkatepark: PropTypes.string,
+  ...profilePropTypes,
 };
 
 Profile.defaultProps = {
-  profilePicture: null,
-  tagline: null,
-  socialMediaHandle: null,
-  homeSkatepark: null,
+  ...profileDefaultProps,
 };
 
 export default Profile;

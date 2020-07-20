@@ -2,6 +2,7 @@ import React from "react";
 import { View, Flex, Title, Body, Callout } from "ui-kit";
 import PropTypes from "prop-types";
 import { ProfileIcon } from "common/components";
+import { profilePropTypes, profileDefaultProps } from "../prop-types";
 
 /**
  *
@@ -22,12 +23,15 @@ const Details = ({
         <Flex flexShrink={1} marginLeft="three" alignSelf="center">
           <Title marginBottom="one">{name}</Title>
           {/* TODO: Make this clickable and opens in Instagram */}
-          {socialMediaHandle && (
+          {socialMediaHandle !== "" && (
             <Callout color="grey" marginBottom="half">
               👤 {socialMediaHandle}
             </Callout>
           )}
-          {homeSkatepark && <Body marginBottom="half">🏠 {homeSkatepark}</Body>}
+          {/* TODO: Make this clickable, redirect to skate park details somehow. Maybe refer by skatepark ID??? */}
+          {homeSkatepark !== "" && (
+            <Body marginBottom="half">🏠 {homeSkatepark}</Body>
+          )}
         </Flex>
       </Flex>
       <View paddingX="one" paddingY="half">
@@ -38,18 +42,11 @@ const Details = ({
 };
 
 Details.propTypes = {
-  name: PropTypes.string.isRequired,
-  profilePicture: PropTypes.string,
-  tagline: PropTypes.string,
-  socialMediaHandle: PropTypes.string,
-  homeSkatepark: PropTypes.string,
+  ...profilePropTypes,
 };
 
 Details.defaultProps = {
-  profilePicture: null,
-  tagline: null,
-  socialMediaHandle: null,
-  homeSkatepark: null,
+  ...profileDefaultProps,
 };
 
 export default Details;

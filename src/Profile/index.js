@@ -4,10 +4,9 @@ import {
   selectProfilePicture,
   selectTagline,
   selectSocialMediaHandle,
+  selectHomeSkatepark,
 } from "./state";
 import Profile from "./Profile";
-
-export * from "./state";
 
 export const ProfileContainer = connect(
   (state) => ({
@@ -15,6 +14,7 @@ export const ProfileContainer = connect(
     profilePicture: selectProfilePicture(state),
     tagline: selectTagline(state),
     socialMediaHandle: selectSocialMediaHandle(state),
+    homeSkatepark: selectHomeSkatepark(state),
   }),
   null
 )(Profile);

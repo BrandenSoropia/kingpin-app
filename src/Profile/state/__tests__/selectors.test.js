@@ -4,6 +4,7 @@ import {
   selectProfilePicture,
   selectTagline,
   selectSocialMediaHandle,
+  selectHomeSkatepark,
 } from "../selectors";
 import { mockProfileAppState } from "../../__mocks__";
 
@@ -35,6 +36,12 @@ describe("Profile Page Selectors Tests", () => {
   it("should select social media handle from profile state", () => {
     expect(selectSocialMediaHandle(mockProfileAppState)).toEqual(
       mockProfileAppState.profile.socialMediaHandle
+    );
+  });
+
+  it("should select home skatepark from profile state", () => {
+    expect(selectHomeSkatepark(mockProfileAppState)).toEqual(
+      mockProfileAppState.profile.homeSkatepark
     );
   });
 });

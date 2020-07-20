@@ -5,10 +5,12 @@ import {
   selectProfilePicture,
   selectTagline,
   selectSocialMediaHandle,
+  selectHomeSkatepark,
   setName,
   setProfilePicture,
   setTagline,
   setSocialMediaHandle,
+  setHomeSkatepark,
 } from "../state";
 
 export const EditContainer = connect(
@@ -17,11 +19,13 @@ export const EditContainer = connect(
     profilePicture: selectProfilePicture(state),
     tagline: selectTagline(state),
     socialMediaHandle: selectSocialMediaHandle(state),
+    homeSkatepark: selectHomeSkatepark(state),
   }),
   {
     setName,
     setProfilePicture,
     setTagline,
     setSocialMediaHandle,
+    setHomeSkatepark,
   }
 )(Edit);

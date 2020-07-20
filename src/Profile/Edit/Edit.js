@@ -10,16 +10,19 @@ import {
   profilePictureConfiguration,
 } from "common/helpers";
 import { useActionSheet } from "@expo/react-native-action-sheet";
+import { profilePropTypes, profileDefaultProps } from "../prop-types";
 
 const Edit = ({
   name,
   profilePicture,
   tagline,
   socialMediaHandle,
+  homeSkatepark,
   setName,
   setProfilePicture,
   setTagline,
   setSocialMediaHandle,
+  setHomeSkatepark,
   navigation,
 }) => {
   // Future TODO: Confirm back if unsaved changes
@@ -31,12 +34,13 @@ const Edit = ({
   const [updatedProfilePicture, setUpdatedProfilePicture] = useState(
     profilePicture
   );
+  const [updateHomeSkatepark, setUpdatedHomeSkatepark] = useState(
+    homeSkatepark
+  );
 
   // If time, figure how to ask for permissions only when the user picks take a photo or use from library
   useImagePickerPermissions();
-
   const { showActionSheetWithOptions } = useActionSheet();
-
   const _onOpenActionSheet = () => {
     showActionSheetWithOptions(
       {
@@ -71,6 +75,7 @@ const Edit = ({
       <View>
         <ProfileIcon profilePicture={updatedProfilePicture} />
         <PrimaryTouchableOpacity
+          marginTop="one"
           borderWidth="none"
           onPress={() => {
             _onOpenActionSheet();
@@ -91,6 +96,11 @@ const Edit = ({
           onChangeText={setUpdatedSocialMediaHandle}
         />
         <TextInputSection
+          label="Home Skatepark"
+          value={updateHomeSkatepark}
+          onChangeText={setUpdatedHomeSkatepark}
+        />
+        <TextInputSection
           label="Tagline"
           value={updatedTagline}
           onChangeText={setUpdatedTagline}
@@ -103,6 +113,7 @@ const Edit = ({
           setTagline(updatedTagline);
           setSocialMediaHandle(updatedSocialMediaHandle);
           setProfilePicture(updatedProfilePicture);
+          setHomeSkatepark(updateHomeSkatepark);
 
           navigation.navigate("Profile");
         }}
@@ -114,20 +125,16 @@ const Edit = ({
 };
 
 Edit.propTypes = {
-  name: PropTypes.string.isRequired,
-  profilePicture: PropTypes.string,
-  tagline: PropTypes.string,
-  socialMediaHandle: PropTypes.string,
+  ...profilePropTypes,
   setName: PropTypes.func.isRequired,
   setProfilePicture: PropTypes.func.isRequired,
   setTagline: PropTypes.func.isRequired,
   setSocialMediaHandle: PropTypes.func.isRequired,
+  setHomeSkatepark: PropTypes.func.isRequired,
 };
 
 Edit.defaultProps = {
-  profilePicture: null,
-  tagline: "",
-  socialMediaHandle: "",
+  ...profileDefaultProps,
 };
 
 export default Edit;

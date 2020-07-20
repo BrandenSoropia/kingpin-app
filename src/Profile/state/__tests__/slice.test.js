@@ -3,6 +3,7 @@ import reducer, {
   setProfilePicture,
   setTagline,
   setSocialMediaHandle,
+  setHomeSkatepark,
   initialState,
 } from "../slice";
 import { mockProfilePictureURL } from "../../__mocks__";
@@ -44,6 +45,15 @@ describe("Profile Redux State Tests", () => {
         },
       });
     });
+
+    it("should return an action to set home skatepark", () => {
+      expect(setHomeSkatepark("The Bentway")).toEqual({
+        type: "profile/setHomeSkatepark",
+        payload: {
+          homeSkatepark: "The Bentway",
+        },
+      });
+    });
   });
 
   describe("Reducer Tests", () => {
@@ -76,6 +86,13 @@ describe("Profile Redux State Tests", () => {
       ).toEqual({
         ...initialState,
         socialMediaHandle: "@brock_the_hustler",
+      });
+    });
+
+    it("should handle set home skatepark", () => {
+      expect(reducer(initialState, setHomeSkatepark("The Bentway"))).toEqual({
+        ...initialState,
+        homeSkatepark: "The Bentway",
       });
     });
   });
