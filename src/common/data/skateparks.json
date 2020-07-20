@@ -3,6 +3,7 @@
     {
       "id": "ca-on-toronto-1",
       "name": "Ashbridges Bay Skatepark / Beaches Skatepark",
+      "image": "",
       "address": {
         "street": "1420 Lake Shore Blvd E.",
         "city": "Toronto",
@@ -23,6 +24,7 @@
     {
       "id": "ca-on-toronto-2",
       "name": "Dunbat Skatepark",
+      "image": "",
       "address": {
         "street": "707 Dundas Street West",
         "city": "Toronto",
@@ -42,6 +44,7 @@
     {
       "id": "ca-on-toronto-3",
       "name": "West Lodge Skatepark/Lansdown Skatepark",
+      "image": "",
       "address": {
         "street": "150 West Lodge Ave.",
         "city": "Toronto",
@@ -61,6 +64,7 @@
     {
       "id": "ca-on-toronto-4",
       "name": "Underpass Skatepark",
+      "image": "",
       "address": {
         "street": "33 St Lawrence St.",
         "city": "Toronto",
@@ -80,6 +84,7 @@
     {
       "id": "ca-on-toronto-5",
       "name": "Dufferin Grove Skatepark",
+      "image": "",
       "address": {
         "street": "875 Dufferin St.",
         "city": "Toronto",
@@ -99,6 +104,7 @@
     {
       "id": "ca-on-toronto-6",
       "name": "CJs Skatepark",
+      "image": "",
       "address": {
         "street": "60 Horner Avenue",
         "city": "Etobicoke",

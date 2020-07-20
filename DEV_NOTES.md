@@ -19,3 +19,7 @@ Seems you need to get permission from the device before accessing it! Luckily `e
 It looks like for Expo's image picker, it doesn't come with an action sheet to provide options to take a picture or use one from their gallery. Kind of annoying since Community's does come with this. So I'll be forced to use [Expo's Action Sheet](https://github.com/expo/react-native-action-sheet).
 
 I guess it's normal to add all these libraries to really maximize React Native's mobile capabilities?
+
+## `<Text>`
+
+It supports adding line breaks if `\n` is present!
