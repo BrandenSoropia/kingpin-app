@@ -1,5 +1,7 @@
 # Cool Things I Learned
 
+I wanted to keep track of some of the things I found interesting/frustrating etc with React Native and mobile development. Here's a dump of it all!
+
 ## `<Image>`
 
 - its `source` prop is used to show local or remote images.
