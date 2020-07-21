@@ -1,11 +1,16 @@
 import React, { useEffect } from "react";
 import { ScrollView, Title, View, Body } from "ui-kit";
 import SkateparkListItem from "./components/SkateparkListItem";
-import { skateparkPropTypes } from "./prop-types";
+import { skateparksPropTypes } from "./prop-types";
 import PropTypes from "prop-types";
 import skateparkData from "common/data/skateparks.json";
 
-const SkateparkFinder = ({ skateparks, setSkateparks }) => {
+const SkateparkFinder = ({
+  skateparks,
+  setSkateparks,
+  setSelectedSkatepark,
+  navigation,
+}) => {
   useEffect(() => {
     // TODO: Mock API call so I can practice making a loading state if time
     setSkateparks(skateparkData.skateparks);
@@ -26,6 +31,10 @@ const SkateparkFinder = ({ skateparks, setSkateparks }) => {
         <SkateparkListItem
           key={`skatepark-list-item${skateparkId}`}
           {...skateparks[skateparkId]}
+          onPress={() => {
+            setSelectedSkatepark(skateparkId);
+            navigation.navigate("Skatepark Details");
+          }}
         />
       ))}
     </ScrollView>
@@ -33,8 +42,11 @@ const SkateparkFinder = ({ skateparks, setSkateparks }) => {
 };
 
 SkateparkFinder.propTypes = {
-  skatepark: skateparkPropTypes,
+  skateparks: skateparksPropTypes,
   setSkateparks: PropTypes.func.isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func,
+  }).isRequired,
 };
 
 export default SkateparkFinder;

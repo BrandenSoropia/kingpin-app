@@ -1,18 +1,12 @@
 import React from "react";
 import { Image, Body, Callout, View, Title, ScrollView } from "ui-kit";
-import PropTypes from "prop-types";
 const fallbackSkateparkImage = require("assets/mock-skatepark.jpg");
-import { addressPropTypes } from "../prop-types";
+import { skateparkPropTypes } from "../prop-types";
 import Address from "../components/Address";
 
-const SkateparkDetails = ({
-  name,
-  image,
-  address,
-  price,
-  hours,
-  description,
-}) => {
+const SkateparkDetails = ({ details }) => {
+  const { name, image, address, price, hours, description } = details;
+
   return (
     <ScrollView>
       <Image
@@ -35,12 +29,7 @@ const SkateparkDetails = ({
 };
 
 SkateparkDetails.propTypes = {
-  name: PropTypes.string.isRequired,
-  image: PropTypes.string,
-  description: PropTypes.string,
-  price: PropTypes.number,
-  hours: PropTypes.string,
-  address: addressPropTypes,
+  details: skateparkPropTypes.isRequired,
 };
 
 SkateparkDetails.defaultProp = {

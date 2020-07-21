@@ -15,6 +15,7 @@ import { StatusBar } from "expo-status-bar";
 import ProfileContainer from "./Profile";
 import EditContainer from "./Profile/Edit";
 import SkateparkFinder from "./SkateparkFinder";
+import SkateparkDetails from "./SkateparkFinder/Details";
 
 const Stack = createStackNavigator();
 
@@ -47,6 +48,14 @@ const App = () => {
                 component={SkateparkFinder}
                 options={{
                   title: "Skatepark Finder",
+                  headerRight: () => <StorybookButton />,
+                }}
+              />
+              <Stack.Screen
+                name="Skatepark Details"
+                component={SkateparkDetails}
+                options={{
+                  title: "Skatepark Details",
                   headerRight: () => <StorybookButton />,
                 }}
               />

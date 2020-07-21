@@ -7,5 +7,8 @@ storiesOf("Skatepark/Skatepark List", module).add("Many Skateparks", () => (
   <SkateparkFinder
     skateparks={skateparkData.skateparks}
     setSkateparks={() => {}}
+    navigation={{
+      navigate: () => {},
+    }}
   />
 ));

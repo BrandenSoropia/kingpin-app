@@ -11,6 +11,7 @@ storiesOf("Skatepark/Skatepark List/List Item", module).add(
       name={skatepark.name}
       address={skatepark.address}
       description={skatepark.description}
+      onPress={() => {}}
     />
   )
 );

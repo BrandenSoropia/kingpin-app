@@ -14,13 +14,13 @@ const StyledTouchableOpacity = styled(TouchableOpacity)`
   }
 `;
 
-const SkateparkListItem = ({ name, image, address, description }) => {
+const SkateparkListItem = ({ name, image, address, description, onPress }) => {
   return (
     <StyledTouchableOpacity
       borderRadius="round"
       borderColor="grey"
       borderWidth="thin"
-      onPress={() => {}}
+      onPress={onPress}
     >
       <Image
         source={(image && { uri: image }) || fallbackSkateparkImage}
@@ -52,6 +52,7 @@ SkateparkListItem.propTypes = {
   image: PropTypes.string,
   description: PropTypes.string,
   address: addressPropTypes,
+  onPress: PropTypes.func.isRequired,
 };
 
 SkateparkListItem.defaultProps = {

@@ -7,13 +7,13 @@ export const addressPropTypes = PropTypes.shape({
   country: PropTypes.string,
 });
 
-export const skateparkPropTypes = PropTypes.arrayOf(
-  PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string,
-    description: PropTypes.string,
-    price: PropTypes.number,
-    hours: PropTypes.string,
-    address: addressPropTypes,
-  })
-);
+export const skateparkPropTypes = PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string,
+  description: PropTypes.string,
+  price: PropTypes.number,
+  hours: PropTypes.string,
+  address: addressPropTypes,
+});
+
+export const skateparksPropTypes = PropTypes.arrayOf(skateparkPropTypes);

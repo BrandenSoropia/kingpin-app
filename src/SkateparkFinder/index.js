@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { selectSkateparks, setSkateparks } from "./state";
+import { selectSkateparks, setSkateparks, setSelectedSkatepark } from "./state";
 import SkateparkFinder from "./SkateparkFinder";
 
 const ConnectedSkateparkFinder = connect(
@@ -8,6 +8,7 @@ const ConnectedSkateparkFinder = connect(
   }),
   {
     setSkateparks,
+    setSelectedSkatepark,
   }
 )(SkateparkFinder);
 
