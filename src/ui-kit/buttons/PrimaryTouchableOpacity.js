@@ -15,12 +15,6 @@ const PrimaryTouchableOpacity = styled(TouchableOpacity).attrs(() => ({
   borderColor: "grey",
   paddingX: "two",
   paddingY: "one",
-}))`
-  ${space}
-  ${color}
-  ${border}
-  ${layout}
-  ${typography}
-`;
+}))``;
 
 export default PrimaryTouchableOpacity;

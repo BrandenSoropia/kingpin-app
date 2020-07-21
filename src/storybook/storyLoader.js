@@ -7,16 +7,18 @@ function loadStories() {
 	require('../Profile/Edit/Edit.stories');
 	require('../Profile/Profile.stories');
 	require('../Profile/components/Details.stories');
-	require('../Skatepark/components/SkateparkDetails.stories');
-	require('../Skatepark/components/SkateparkListItem.stories');
+	require('../SkateparkFinder/Details/SkateparkDetails.stories');
+	require('../SkateparkFinder/SkateparkFinder.stories');
+	require('../SkateparkFinder/components/SkateparkListItem.stories');
 }
 
 const stories = [
 	'../Profile/Edit/Edit.stories',
 	'../Profile/Profile.stories',
 	'../Profile/components/Details.stories',
-	'../Skatepark/components/SkateparkDetails.stories',
-	'../Skatepark/components/SkateparkListItem.stories'
+	'../SkateparkFinder/Details/SkateparkDetails.stories',
+	'../SkateparkFinder/SkateparkFinder.stories',
+	'../SkateparkFinder/components/SkateparkListItem.stories'
 ];
 
 module.exports = {

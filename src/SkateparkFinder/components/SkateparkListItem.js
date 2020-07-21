@@ -4,12 +4,20 @@ import PropTypes from "prop-types";
 const fallbackSkateparkImage = require("assets/mock-skatepark.jpg");
 import { addressPropTypes } from "../prop-types";
 import Address from "./Address";
+import styled from "styled-components/native";
+
+const StyledTouchableOpacity = styled(TouchableOpacity)`
+  margin-bottom: ${({ theme }) => theme.space.two};
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+`;
 
 const SkateparkListItem = ({ name, image, address, description }) => {
   return (
-    <TouchableOpacity
+    <StyledTouchableOpacity
       borderRadius="round"
-      marginX="half"
       borderColor="grey"
       borderWidth="thin"
       onPress={() => {}}
@@ -35,7 +43,7 @@ const SkateparkListItem = ({ name, image, address, description }) => {
           {description}
         </Body>
       </View>
-    </TouchableOpacity>
+    </StyledTouchableOpacity>
   );
 };
 
@@ -43,7 +51,7 @@ SkateparkListItem.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string,
   description: PropTypes.string,
-  ...addressPropTypes,
+  address: addressPropTypes,
 };
 
 SkateparkListItem.defaultProps = {

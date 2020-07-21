@@ -3,7 +3,7 @@ import { Image, Body, Callout, View, Title, ScrollView } from "ui-kit";
 import PropTypes from "prop-types";
 const fallbackSkateparkImage = require("assets/mock-skatepark.jpg");
 import { addressPropTypes } from "../prop-types";
-import Address from "./Address";
+import Address from "../components/Address";
 
 const SkateparkDetails = ({
   name,
@@ -40,7 +40,7 @@ SkateparkDetails.propTypes = {
   description: PropTypes.string,
   price: PropTypes.number,
   hours: PropTypes.string,
-  ...addressPropTypes,
+  address: addressPropTypes,
 };
 
 SkateparkDetails.defaultProp = {
