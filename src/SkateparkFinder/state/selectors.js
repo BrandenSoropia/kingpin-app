@@ -1,6 +1,6 @@
 import { createSelector } from "@reduxjs/toolkit";
 
-export const selectSkateFinder = (state) => state?.skateFinder;
+export const selectSkateFinder = (state) => state?.skateparkFinder;
 
 export const selectSkateparks = createSelector(
   selectSkateFinder,

@@ -125,7 +125,7 @@ export const mockFormattedSkateparksState = {
 };
 
 export const mockAppState = {
-  skateFinder: {
+  skateparkFinder: {
     skateparks: mockFormattedSkateparksState,
     selectedSkateparkId: mockSelectedSkateparkId,
   },

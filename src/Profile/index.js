@@ -8,7 +8,7 @@ import {
 } from "./state";
 import Profile from "./Profile";
 
-export const ProfileContainer = connect(
+const ProfileContainer = connect(
   (state) => ({
     name: selectName(state),
     profilePicture: selectProfilePicture(state),
@@ -18,3 +18,5 @@ export const ProfileContainer = connect(
   }),
   null
 )(Profile);
+
+export default ProfileContainer;

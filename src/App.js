@@ -6,23 +6,26 @@ import { registerRootComponent } from "expo";
 import { theme, StorybookButton, View } from "ui-kit";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import { ProfileContainer } from "./Profile";
-import { EditContainer } from "./Profile/Edit";
 import store from "./store";
 import { Provider } from "react-redux";
 import { ActionSheetProvider } from "@expo/react-native-action-sheet";
 import { StatusBar } from "expo-status-bar";
+
+// Features
+import ProfileContainer from "./Profile";
+import EditContainer from "./Profile/Edit";
+import SkateparkFinder from "./SkateparkFinder";
 
 const Stack = createStackNavigator();
 
 const App = () => {
   return (
     <ActionSheetProvider>
-      <NavigationContainer initialRouteName="Storybook">
+      <NavigationContainer>
         <ThemeProvider theme={theme}>
           <Provider store={store}>
             <StatusBar />
-            <Stack.Navigator>
+            <Stack.Navigator initialRouteName="Skatepark Finder">
               <Stack.Screen
                 name="Profile"
                 component={ProfileContainer}
@@ -36,6 +39,14 @@ const App = () => {
                 component={EditContainer}
                 options={{
                   title: "Edit Profile",
+                  headerRight: () => <StorybookButton />,
+                }}
+              />
+              <Stack.Screen
+                name="Skatepark Finder"
+                component={SkateparkFinder}
+                options={{
+                  title: "Skatepark Finder",
                   headerRight: () => <StorybookButton />,
                 }}
               />

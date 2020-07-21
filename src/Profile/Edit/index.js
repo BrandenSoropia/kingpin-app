@@ -13,7 +13,7 @@ import {
   setHomeSkatepark,
 } from "../state";
 
-export const EditContainer = connect(
+const EditContainer = connect(
   (state) => ({
     name: selectName(state),
     profilePicture: selectProfilePicture(state),
@@ -29,3 +29,5 @@ export const EditContainer = connect(
     setHomeSkatepark,
   }
 )(Edit);
+
+export default EditContainer;
