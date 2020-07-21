@@ -3,7 +3,7 @@ import React from "react";
 import StorybookUI from "./storybook";
 import { ThemeProvider } from "styled-components";
 import { registerRootComponent } from "expo";
-import { theme, StorybookButton } from "ui-kit";
+import { theme, StorybookButton, View } from "ui-kit";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { ProfileContainer } from "./Profile";

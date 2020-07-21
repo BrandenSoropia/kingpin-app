@@ -2,22 +2,8 @@ import React from "react";
 import { Image, Body, Callout, View, Title, ScrollView } from "ui-kit";
 import PropTypes from "prop-types";
 const fallbackSkateparkImage = require("assets/mock-skatepark.jpg");
-
-const Address = ({ street, city }) => {
-  let address = "";
-
-  if (street && city) {
-    address = `${street}, ${city}`;
-  } else {
-    address = street;
-  }
-
-  return (
-    <Callout marginBottom="one" color="grey" marginBottom="one">
-      {`📍 ${address}`}
-    </Callout>
-  );
-};
+import { addressPropTypes } from "../prop-types";
+import Address from "./Address";
 
 const SkateparkDetails = ({
   name,
@@ -52,14 +38,9 @@ SkateparkDetails.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string,
   description: PropTypes.string,
-  address: PropTypes.shape({
-    street: PropTypes.string,
-    city: PropTypes.string,
-    province: PropTypes.string,
-    country: PropTypes.string,
-  }).isRequired,
   price: PropTypes.number,
   hours: PropTypes.string,
+  ...addressPropTypes,
 };
 
 SkateparkDetails.defaultProp = {

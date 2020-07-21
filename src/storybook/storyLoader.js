@@ -8,13 +8,15 @@ function loadStories() {
 	require('../Profile/Profile.stories');
 	require('../Profile/components/Details.stories');
 	require('../Skatepark/components/SkateparkDetails.stories');
+	require('../Skatepark/components/SkateparkListItem.stories');
 }
 
 const stories = [
 	'../Profile/Edit/Edit.stories',
 	'../Profile/Profile.stories',
 	'../Profile/components/Details.stories',
-	'../Skatepark/components/SkateparkDetails.stories'
+	'../Skatepark/components/SkateparkDetails.stories',
+	'../Skatepark/components/SkateparkListItem.stories'
 ];
 
 module.exports = {
