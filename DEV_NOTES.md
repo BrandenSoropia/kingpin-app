@@ -26,8 +26,14 @@ It supports adding line breaks if `\n` is present!
 
 ## `styled-components` Gotcha's
 
-- SInce React Native doesn't use units, it's works a little weirdly with `styled-components`. Imagine using `margin-bottom: 16;`Everything works fine and the style applies properly, but SC throws a warning saying "expected style `<margin-bottom: 16>` to contain units". This can be fixed simply by adding `px`, and a code mod exists that can help you fix this throughout your code base. How SC will handle this isstill in discussion, but me, I don't want to mix web and RN styling so I will just live with this warning.
+- Since React Native doesn't use units, it's works a little weirdly with `styled-components`. Imagine using `margin-bottom: 16;`Everything works fine and the style applies properly, but SC throws a warning saying "expected style `<margin-bottom: 16>` to contain units". This can be fixed simply by adding `px`, and a code mod exists that can help you fix this throughout your code base. How SC will handle this isstill in discussion, but me, I don't want to mix web and RN styling so I will just live with this warning.
 
   [SC discussion unit discussion](https://github.com/styled-components/css-to-react-native/issues/40)
 
   [SC code mod](https://github.com/styled-components/styled-components-native-code-mod)
+
+## React Native Debugger
+
+- Nice all in one suite for Redux, React and other dev tools
+- Maybe just me, but console tab is slow and unresponsive for a few seconds
+- Can't seem to find the styling tab when inspecting elements! It's a little annoying but I've been getting around it by closing the RN debugger and just using the in-app inspector!
