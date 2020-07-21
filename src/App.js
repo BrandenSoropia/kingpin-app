@@ -10,14 +10,14 @@ import store from "./store";
 import { Provider } from "react-redux";
 import { ActionSheetProvider } from "@expo/react-native-action-sheet";
 import { StatusBar } from "expo-status-bar";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 // Features
-import ProfileContainer from "./Profile";
-import EditContainer from "./Profile/Edit";
-import SkateparkFinder from "./SkateparkFinder";
-import SkateparkDetails from "./SkateparkFinder/Details";
+import ProfileConnectedNavigator from "./Profile";
+import SkateparkFinderConnectedNavigator from "./SkateparkFinder";
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const App = () => {
   return (
@@ -26,47 +26,16 @@ const App = () => {
         <ThemeProvider theme={theme}>
           <Provider store={store}>
             <StatusBar />
-            <Stack.Navigator initialRouteName="Skatepark Finder">
-              <Stack.Screen
+            <Tab.Navigator>
+              <Tab.Screen
+                name="Skatepark"
+                component={SkateparkFinderConnectedNavigator}
+              />
+              <Tab.Screen
                 name="Profile"
-                component={ProfileContainer}
-                options={{
-                  title: "Profile",
-                  headerRight: () => <StorybookButton />,
-                }}
+                component={ProfileConnectedNavigator}
               />
-              <Stack.Screen
-                name="Edit Profile"
-                component={EditContainer}
-                options={{
-                  title: "Edit Profile",
-                  headerRight: () => <StorybookButton />,
-                }}
-              />
-              <Stack.Screen
-                name="Skatepark Finder"
-                component={SkateparkFinder}
-                options={{
-                  title: "Skatepark Finder",
-                  headerRight: () => <StorybookButton />,
-                }}
-              />
-              <Stack.Screen
-                name="Skatepark Details"
-                component={SkateparkDetails}
-                options={{
-                  title: "Skatepark Details",
-                  headerRight: () => <StorybookButton />,
-                }}
-              />
-              <Stack.Screen
-                name="Storybook"
-                component={StorybookUI}
-                options={{
-                  title: "Storybook",
-                }}
-              />
-            </Stack.Navigator>
+            </Tab.Navigator>
           </Provider>
         </ThemeProvider>
       </NavigationContainer>

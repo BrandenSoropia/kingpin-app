@@ -33,7 +33,7 @@ const SkateparkFinder = ({
           {...skateparks[skateparkId]}
           onPress={() => {
             setSelectedSkatepark(skateparkId);
-            navigation.navigate("Skatepark Details");
+            navigation.navigate("Details", { screen: "Details" });
           }}
         />
       ))}

@@ -1,3 +1,4 @@
+import React from "react";
 import { connect } from "react-redux";
 import {
   selectName,
@@ -7,8 +8,12 @@ import {
   selectHomeSkatepark,
 } from "./state";
 import Profile from "./Profile";
+import ConnectedEdit from "./Edit";
+import { createStackNavigator } from "@react-navigation/stack";
 
-const ProfileContainer = connect(
+const ProfileStack = createStackNavigator();
+
+const ConnectedProfile = connect(
   (state) => ({
     name: selectName(state),
     profilePicture: selectProfilePicture(state),
@@ -19,4 +24,13 @@ const ProfileContainer = connect(
   null
 )(Profile);
 
-export default ProfileContainer;
+const ProfileConnectedNavigator = () => {
+  return (
+    <ProfileStack.Navigator>
+      <ProfileStack.Screen name="Details" component={ConnectedProfile} />
+      <ProfileStack.Screen name="Edit" component={ConnectedEdit} />
+    </ProfileStack.Navigator>
+  );
+};
+
+export default ProfileConnectedNavigator;

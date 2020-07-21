@@ -24,7 +24,7 @@ const Profile = ({
       <PrimaryTouchableOpacity
         marginTop="two"
         onPress={() => {
-          navigation.navigate("Edit Profile");
+          navigation.navigate("Profile", { screen: "Edit" });
         }}
       >
         <Body textAlign="center">Edit Profile</Body>

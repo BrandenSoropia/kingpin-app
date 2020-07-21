@@ -115,7 +115,7 @@ const Edit = ({
           setProfilePicture(updatedProfilePicture);
           setHomeSkatepark(updateHomeSkatepark);
 
-          navigation.navigate("Profile");
+          navigation.navigate("Profile", { screen: "Details" });
         }}
       >
         <Body textAlign="center">Done</Body>
