@@ -25,7 +25,7 @@ const SkateparkFinder = ({
   }
 
   return (
-    <ScrollView paddingX="two" paddingY="one">
+    <ScrollView paddingX="two" paddingY="two">
       <Title marginBottom="one">Toronto Skateparks</Title>
       {Object.keys(skateparks).map((skateparkId) => (
         <SkateparkListItem

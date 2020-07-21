@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, Body, Callout, View, Title, ScrollView } from "ui-kit";
+import { Image, Body, Callout, View, Title, ScrollView, Flex } from "ui-kit";
 const fallbackSkateparkImage = require("assets/mock-skatepark.jpg");
 import { skateparkPropTypes } from "../prop-types";
 import Address from "../components/Address";
@@ -12,7 +12,7 @@ const SkateparkDetails = ({ details }) => {
       <Image
         source={(image && { uri: image }) || fallbackSkateparkImage}
         width="100%"
-        height="50%"
+        height={300}
         marginBottom="two"
       />
       <View paddingX="two">
@@ -22,7 +22,7 @@ const SkateparkDetails = ({ details }) => {
         <Address {...address} />
         <Callout marginBottom="one">{`💲${price || "Free"}`}</Callout>
         <Callout marginBottom="two">{`⏰${hours || "Unknown"}`}</Callout>
-        <Body>{description}</Body>
+        <Body paddingBottom="two">{description}</Body>
       </View>
     </ScrollView>
   );
