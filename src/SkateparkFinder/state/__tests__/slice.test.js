@@ -5,6 +5,7 @@ import {
   reducer,
 } from "../slice";
 import skateparkData from "common/data/skateparks.json";
+import { mockFormattedSkateparksState } from "../__mocks__/mock-state";
 
 const skateparks = skateparkData.skateparks;
 
@@ -31,7 +32,7 @@ describe("Skatepark Finder state tests", () => {
     it("should handle setSkateparks action", () => {
       expect(reducer(initialState, setSkateparks(skateparks))).toEqual({
         ...initialState,
-        skateparks,
+        skateparks: mockFormattedSkateparksState,
       });
     });
 
