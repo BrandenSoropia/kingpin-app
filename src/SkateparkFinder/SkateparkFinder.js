@@ -1,5 +1,5 @@
 import React from "react";
-import { ScrollView, Body, Title, View } from "ui-kit";
+import { ScrollView, Title, View } from "ui-kit";
 import SkateparkListItem from "./components/SkateparkListItem";
 import { skateparkPropTypes } from "./prop-types";
 
