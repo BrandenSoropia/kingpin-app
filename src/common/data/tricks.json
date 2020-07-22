@@ -1,0 +1,36 @@
+{
+  "tricks": [
+    {
+      "id": "trick-0",
+      "name": "Pushing/Riding"
+    },
+    {
+      "id": "trick-1",
+      "name": "Ollie"
+    },
+    {
+      "id": "trick-2",
+      "name": "Frontside 180"
+    },
+    {
+      "id": "trick-3",
+      "name": "Backside 180"
+    },
+    {
+      "id": "trick-4",
+      "name": "Shuvit"
+    },
+    {
+      "id": "trick-5",
+      "name": "Pop Shuvit"
+    },
+    {
+      "id": "trick-6",
+      "name": "Heel Flip"
+    },
+    {
+      "id": "trick-7",
+      "name": "Kick Flip"
+    }
+  ]
+}
