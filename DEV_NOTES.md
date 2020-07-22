@@ -45,3 +45,9 @@ RN's not using full CSS
 - Nice all in one suite for Redux, React and other dev tools
 - Maybe just me, but console tab is slow and unresponsive for a few seconds
 - Can't seem to find the styling tab when inspecting elements! It's a little annoying but I've been getting around it by closing the RN debugger and just using the in-app inspector!
+
+## Fixing ScrollView contents cutting off
+
+It seems you can use padding/margin on one of these. However, for some reason it causes the scroll to be funky and not fully scroll down by whatever spacing styles you applied, thus cutting off items starting at the bottom of the list! Workaround, wrap these in `View` and apply those spacings to there!
+
+You can recreate this by going to `src/TrickTracker/TrickTracker.js` or `src/SkateparkFinder/SkateparkFinder.js` and remove the wrapping `View` and apply the styles directly to the `ScrollView`. Looking at their stories, or the app, you'll see that the bottom most items in either of those will be cut off slightly.
