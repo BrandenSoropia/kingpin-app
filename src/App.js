@@ -11,6 +11,7 @@ import { ActionSheetProvider } from "@expo/react-native-action-sheet";
 import { StatusBar } from "expo-status-bar";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
+import StorybookUIRoot from "./storybook";
 
 // Features
 import ProfileConnectedNavigator from "./Profile";
@@ -47,6 +48,15 @@ const App = () => {
                 options={{
                   tabBarIcon: ({ color, size }) => (
                     <Ionicons name="md-person" size={size} color={color} />
+                  ),
+                }}
+              />
+              <Tab.Screen
+                name="Storybook"
+                component={StorybookUIRoot}
+                options={{
+                  tabBarIcon: ({ color, size }) => (
+                    <Ionicons name="md-book" size={size} color={color} />
                   ),
                 }}
               />
