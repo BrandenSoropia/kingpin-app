@@ -12,6 +12,7 @@ storiesOf("Skatepark/Skatepark List/List Item", module).add(
       address={skatepark.address}
       description={skatepark.description}
       onPress={() => {}}
+      isLastOfType
     />
   )
 );

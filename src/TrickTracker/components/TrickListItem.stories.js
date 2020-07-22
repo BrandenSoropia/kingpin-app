@@ -11,5 +11,6 @@ storiesOf("Tricks/Trick List/Trick List Item", module).add("One Trick", () => (
     name={trick.name}
     fallbackImage={fallbackPushingImage}
     onPress={() => {}}
+    isLastOfType
   />
 ));

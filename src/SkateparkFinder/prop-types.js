@@ -17,5 +17,5 @@ export const skateparkPropTypes = PropTypes.shape({
 });
 
 export const skateparksPropTypes = PropTypes.shape({
-  skatepark: skateparkPropTypes,
+  skateparkId: skateparkPropTypes,
 });

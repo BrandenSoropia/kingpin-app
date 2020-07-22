@@ -1,0 +1,1 @@
+I don't own these images. Trick sequence, images and descriptions copied from https://brailleskateboarding.com/learn-to-skate/skateboarding-trick-guide/. Please check them out. Please let me know if you have concerns and I will try my best to address them!

@@ -24,13 +24,21 @@ I guess it's normal to add all these libraries to really maximize React Native's
 
 It supports adding line breaks if `\n` is present!
 
-## `styled-components` Gotcha's
+## Styling Gotcha's
 
-- Since React Native doesn't use units, it's works a little weirdly with `styled-components`. Imagine using `margin-bottom: 16;`Everything works fine and the style applies properly, but SC throws a warning saying "expected style `<margin-bottom: 16>` to contain units". This can be fixed simply by adding `px`, and a code mod exists that can help you fix this throughout your code base. How SC will handle this isstill in discussion, but me, I don't want to mix web and RN styling so I will just live with this warning.
+`styled-components`
+
+- Since React Native doesn't use units, it's works a little weirdly with `styled-components`. Imagine using `margin-bottom: 16;`Everything works fine and the style applies properly, but SC throws a warning saying "expected style `<margin-bottom: 16>` to contain units". This can be fixed simply by adding `px`, and a code mod exists that can help you fix this throughout your code base. How SC will handle this is still in discussion, but for me, I don't want to mix web and RN styling so I will just live with this warning.
 
   [SC discussion unit discussion](https://github.com/styled-components/css-to-react-native/issues/40)
 
   [SC code mod](https://github.com/styled-components/styled-components-native-code-mod)
+
+- My simple solution on above, I should just use `attrs` instead of rules in the interpolation string!
+
+RN's not using full CSS
+
+- Looks like pseudo selectors aren't supported! You have to use JS logic to apply a style object or not, but how do I do that with `styled-components`? I guess I can pass in a prop to the styled component that will toggle on/off rules!
 
 ## React Native Debugger
 

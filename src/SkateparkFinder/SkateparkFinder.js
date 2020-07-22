@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { ScrollView, Title, View, Body } from "ui-kit";
+import { ScrollView, Title, Body } from "ui-kit";
 import SkateparkListItem from "./components/SkateparkListItem";
 import { skateparksPropTypes } from "./prop-types";
 import PropTypes from "prop-types";
@@ -24,10 +24,11 @@ const SkateparkFinder = ({
     return <Body>Loading!</Body>;
   }
 
+  const skateparkIds = Object.keys(skateparks);
   return (
     <ScrollView paddingX="two" paddingY="two">
       <Title marginBottom="one">Toronto Skateparks</Title>
-      {Object.keys(skateparks).map((skateparkId) => (
+      {skateparkIds.map((skateparkId, idx) => (
         <SkateparkListItem
           key={`skatepark-list-item${skateparkId}`}
           {...skateparks[skateparkId]}
@@ -35,6 +36,7 @@ const SkateparkFinder = ({
             setSelectedSkatepark(skateparkId);
             navigation.navigate("Details", { screen: "Details" });
           }}
+          isLastOfType={idx === skateparkIds.length - 1}
         />
       ))}
     </ScrollView>

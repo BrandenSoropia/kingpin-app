@@ -6,21 +6,27 @@ import { addressPropTypes } from "../prop-types";
 import Address from "./Address";
 import styled from "styled-components/native";
 
-const StyledTouchableOpacity = styled(TouchableOpacity)`
-  margin-bottom: ${({ theme }) => theme.space.two};
+const StyledTouchableOpacity = styled(TouchableOpacity).attrs(
+  ({ isLastOfType }) => ({
+    marginBottom: isLastOfType ? "none" : "two",
+  })
+)``;
 
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-`;
-
-const SkateparkListItem = ({ name, image, address, description, onPress }) => {
+const SkateparkListItem = ({
+  name,
+  image,
+  address,
+  description,
+  onPress,
+  isLastOfType,
+}) => {
   return (
     <StyledTouchableOpacity
       borderRadius="round"
       borderColor="grey"
       borderWidth="thin"
       onPress={onPress}
+      isLastOfType={isLastOfType}
     >
       <Image
         source={(image && { uri: image }) || fallbackSkateparkImage}
@@ -53,6 +59,7 @@ SkateparkListItem.propTypes = {
   description: PropTypes.string,
   address: addressPropTypes,
   onPress: PropTypes.func.isRequired,
+  isLastOfType: PropTypes.bool.isRequired,
 };
 
 SkateparkListItem.defaultProps = {

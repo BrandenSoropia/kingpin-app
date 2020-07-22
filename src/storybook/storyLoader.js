@@ -10,7 +10,8 @@ function loadStories() {
 	require('../SkateparkFinder/Details/SkateparkDetails.stories');
 	require('../SkateparkFinder/SkateparkFinder.stories');
 	require('../SkateparkFinder/components/SkateparkListItem.stories');
-	require('../Tricks/components/TrickListItem.stories');
+	require('../TrickTracker/TrickTracker.stories');
+	require('../TrickTracker/components/TrickListItem.stories');
 }
 
 const stories = [
@@ -20,7 +21,8 @@ const stories = [
 	'../SkateparkFinder/Details/SkateparkDetails.stories',
 	'../SkateparkFinder/SkateparkFinder.stories',
 	'../SkateparkFinder/components/SkateparkListItem.stories',
-	'../Tricks/components/TrickListItem.stories'
+	'../TrickTracker/TrickTracker.stories',
+	'../TrickTracker/components/TrickListItem.stories'
 ];
 
 module.exports = {
