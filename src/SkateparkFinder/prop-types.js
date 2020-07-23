@@ -8,6 +8,7 @@ export const addressPropTypes = PropTypes.shape({
 });
 
 export const skateparkPropTypes = PropTypes.shape({
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   image: PropTypes.string,
   description: PropTypes.string,
@@ -16,6 +17,6 @@ export const skateparkPropTypes = PropTypes.shape({
   address: addressPropTypes,
 });
 
-export const skateparksPropTypes = PropTypes.shape({
-  skateparkId: skateparkPropTypes,
+export const skateparksPropTypes = PropTypes.arrayOf({
+  skateparkPropTypes,
 });

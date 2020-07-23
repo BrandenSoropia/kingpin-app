@@ -1,7 +1,6 @@
-export const mockSelectedSkateparkId = "ca-on-toronto-2";
-
-export const mockFormattedSkateparksState = {
-  "ca-on-toronto-1": {
+export const mockFormattedSkateparksState = [
+  {
+    id: "ca-on-toronto-1",
     name: "Ashbridges Bay Skatepark / Beaches Skatepark",
     image: "",
     address: {
@@ -22,7 +21,8 @@ export const mockFormattedSkateparksState = {
     price: 0,
     hours: "Sunrise to Sunset",
   },
-  "ca-on-toronto-2": {
+  {
+    id: "ca-on-toronto-2",
     name: "Dunbat Skatepark",
     image: "",
     address: {
@@ -42,7 +42,8 @@ export const mockFormattedSkateparksState = {
     price: 0,
     hours: "Sunset to Sunrise",
   },
-  "ca-on-toronto-3": {
+  {
+    id: "ca-on-toronto-3",
     name: "West Lodge Skatepark/Lansdown Skatepark",
     image: "",
     address: {
@@ -62,7 +63,8 @@ export const mockFormattedSkateparksState = {
     price: 0,
     hours: "Sunset to Sunrise",
   },
-  "ca-on-toronto-4": {
+  {
+    id: "ca-on-toronto-4",
     name: "Underpass Skatepark",
     image: "",
     address: {
@@ -82,7 +84,8 @@ export const mockFormattedSkateparksState = {
     price: 0,
     hours: "24 Hrs with lights",
   },
-  "ca-on-toronto-5": {
+  {
+    id: "ca-on-toronto-5",
     name: "Dufferin Grove Skatepark",
     image: "",
     address: {
@@ -102,7 +105,8 @@ export const mockFormattedSkateparksState = {
     price: 0,
     hours: "Sunset to Sunrise",
   },
-  "ca-on-toronto-6": {
+  {
+    id: "ca-on-toronto-6",
     name: "CJs Skatepark",
     image: "",
     address: {
@@ -122,11 +126,13 @@ export const mockFormattedSkateparksState = {
     price: 22,
     hours: "Sunset to Sunrise",
   },
-};
+];
+
+export const mockSelectedSkatepark = mockFormattedSkateparksState[1];
 
 export const mockAppState = {
   skateparkFinder: {
     skateparks: mockFormattedSkateparksState,
-    selectedSkateparkId: mockSelectedSkateparkId,
+    selectedSkateparkId: mockSelectedSkatepark.id,
   },
 };

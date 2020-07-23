@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { View, ScrollView, Title, Body } from "ui-kit";
+import { View, ScrollView, Title, Body, FlatList } from "ui-kit";
 import SkateparkListItem from "./components/SkateparkListItem";
 import { skateparksPropTypes } from "./prop-types";
 import PropTypes from "prop-types";
@@ -16,31 +16,31 @@ const SkateparkFinder = ({
     setSkateparks(skateparkData.skateparks);
   }, [setSkateparks]);
 
-  const isSkateparksReady =
-    !skateparks ||
-    (Object.keys(skateparks).length === 0 && skateparks.constructor === Object);
-
-  if (isSkateparksReady) {
+  if (!skateparks) {
     return <Body>Loading!</Body>;
   }
 
-  const skateparkIds = Object.keys(skateparks);
   return (
     <View>
-      <ScrollView paddingX="two">
-        <Title marginBottom="one">Toronto Skateparks</Title>
-        {skateparkIds.map((skateparkId, idx) => (
+      <FlatList
+        paddingX="two"
+        ListHeaderComponent={
+          <Title marginBottom="one">Toronto Skateparks</Title>
+        }
+        data={skateparks}
+        renderItem={({ item: skatepark, idx }) => (
           <SkateparkListItem
-            key={`skatepark-list-item${skateparkId}`}
-            {...skateparks[skateparkId]}
+            key={`skatepark-list-item${skatepark.id}`}
+            {...skatepark}
             onPress={() => {
-              setSelectedSkatepark(skateparkId);
+              setSelectedSkatepark(skatepark.id);
               navigation.navigate("Details", { screen: "Details" });
             }}
-            isLastOfType={idx === skateparkIds.length - 1}
+            isLastOfType={idx === skateparks.length - 1}
           />
-        ))}
-      </ScrollView>
+        )}
+        keyExtractor={(item) => item.id}
+      ></FlatList>
     </View>
   );
 };

@@ -5,7 +5,7 @@ import {
   selectSelectedSkatepark,
 } from "../selectors";
 import {
-  mockSelectedSkateparkId,
+  mockSelectedSkatepark,
   mockFormattedSkateparksState,
   mockAppState,
 } from "../__mocks__/mock-state";
@@ -14,7 +14,7 @@ describe("Skate Finder Selectors Tests", () => {
   it("select skate finder", () => {
     expect(selectSkateFinder(mockAppState)).toEqual({
       skateparks: mockFormattedSkateparksState,
-      selectedSkateparkId: mockSelectedSkateparkId,
+      selectedSkateparkId: mockSelectedSkatepark.id,
     });
   });
 
@@ -26,13 +26,13 @@ describe("Skate Finder Selectors Tests", () => {
 
   it("select selected skatepark id", () => {
     expect(selectSelectedSkateparkId(mockAppState)).toEqual(
-      mockSelectedSkateparkId
+      mockSelectedSkatepark.id
     );
   });
 
   it("select selected skatepark", () => {
     expect(selectSelectedSkatepark(mockAppState)).toEqual(
-      mockFormattedSkateparksState[mockSelectedSkateparkId]
+      mockSelectedSkatepark
     );
   });
 });

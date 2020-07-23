@@ -14,5 +14,6 @@ export const selectSelectedSkateparkId = createSelector(
 
 export const selectSelectedSkatepark = createSelector(
   [selectSkateparks, selectSelectedSkateparkId],
-  (skateparks, selectedSkateparkId) => skateparks[selectedSkateparkId]
+  (skateparks, selectedSkateparkId) =>
+    skateparks.find((skatepark) => skatepark.id === selectedSkateparkId)
 );
