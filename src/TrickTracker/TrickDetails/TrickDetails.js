@@ -6,13 +6,15 @@ import {
   Image,
   WebLinkWrapper,
   PrimaryTouchableOpacity,
+  View,
 } from "ui-kit";
 import { trickPropTypes, trickDefaultProps } from "../prop-types";
+import fallbackImage from "assets/mock-trick.jpg";
 
 const WebLink = WebLinkWrapper(PrimaryTouchableOpacity);
 
 const TrickDetails = ({ details }) => {
-  const { name, description, image, fallbackImage, links } = details;
+  const { name, description, image, links } = details;
 
   return (
     <ScrollView>
@@ -26,8 +28,8 @@ const TrickDetails = ({ details }) => {
       <Body marginBottom="two">{description}</Body>
       {/* TODO: If time, rework links to include CTA and href */}
       {links.map((href) => (
-        <WebLink href={href} key={`web-link-${href}`}>
-          <Body textAlign="center">Read or watch a tutorial here</Body>
+        <WebLink href={href} key={`web-link-${href}`} marginBottom="two">
+          <Body textAlign="center">Read and watch a tutorial here</Body>
         </WebLink>
       ))}
     </ScrollView>
