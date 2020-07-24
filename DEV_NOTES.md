@@ -10,7 +10,7 @@ I wanted to keep track of some of the things I found interesting/frustrating etc
 
   For remote, you need to pass `source` an object in the following formate: `{ uri: "www.some-uri.com/image/destination" }`.
 
-## Accessing a Mobile Devices's Native Images
+## Accessing a Mobile Device's Native Images
 
 Seems you need to get permission from the device before accessing it! Luckily `expo-image-picker` has a help to set that up
 
@@ -51,3 +51,19 @@ RN's not using full CSS
 It seems you can use padding/margin on one of these. However, for some reason it causes the scroll to be funky and not fully scroll down by whatever spacing styles you applied, thus cutting off items starting at the bottom of the list! Workaround, wrap these in `View` and apply those spacings to there!
 
 You can recreate this by going to `src/TrickTracker/TrickTracker.js` or `src/SkateparkFinder/SkateparkFinder.js` and remove the wrapping `View` and apply the styles directly to the `ScrollView`. Looking at their stories, or the app, you'll see that the bottom most items in either of those will be cut off slightly.
+
+## React Conditional Rendering
+
+in a conditional render, it seems if you return a value, like `0` or `''` it will crash the app!
+
+```
+const Foo = () => {
+  return (
+    <View>
+      {someCondition && <SomeComponent />}
+    </View>
+  )
+}
+```
+
+The ideal way is to use ternary operators to render `null` or use `!!` to get a boolean value after evaluating the condition. [Read more here](https://github.com/facebook/react-native/issues/20764)

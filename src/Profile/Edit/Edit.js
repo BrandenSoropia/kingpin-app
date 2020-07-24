@@ -109,11 +109,28 @@ const Edit = ({
       <PrimaryTouchableOpacity
         marginTop="two"
         onPress={() => {
-          setName(updatedName);
-          setTagline(updatedTagline);
-          setSocialMediaHandle(updatedSocialMediaHandle);
-          setProfilePicture(updatedProfilePicture);
-          setHomeSkatepark(updateHomeSkatepark);
+          // TODO: Clean this up... Formik or similar libraries would handle this so much better
+          // Got really tired and lazy so leaving this as is...
+          if (name !== updatedName) {
+            console.log("#hi", updatedName);
+            setName(updatedName);
+          }
+
+          if (tagline !== updatedTagline) {
+            setTagline(updatedTagline);
+          }
+
+          if (socialMediaHandle !== updatedSocialMediaHandle) {
+            setSocialMediaHandle(updatedSocialMediaHandle);
+          }
+
+          if (profilePicture !== updatedProfilePicture) {
+            setProfilePicture(updatedProfilePicture);
+          }
+
+          if (homeSkatepark !== updateHomeSkatepark) {
+            setHomeSkatepark(updateHomeSkatepark);
+          }
 
           navigation.navigate("Profile", { screen: "Details" });
         }}

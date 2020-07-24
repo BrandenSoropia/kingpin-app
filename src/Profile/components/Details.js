@@ -1,6 +1,5 @@
 import React from "react";
 import { View, Flex, Title, Body, Callout } from "ui-kit";
-import PropTypes from "prop-types";
 import { ProfileIcon } from "common/components";
 import { profilePropTypes, profileDefaultProps } from "../prop-types";
 
@@ -16,6 +15,8 @@ const Details = ({
   socialMediaHandle,
   homeSkatepark,
 }) => {
+  console.log(name, profilePicture, tagline, socialMediaHandle, homeSkatepark);
+
   return (
     <View>
       <Flex flexDirection="row" marginBottom="two">
@@ -23,18 +24,22 @@ const Details = ({
         <Flex flexShrink={1} marginLeft="three" alignSelf="center">
           <Title marginBottom="one">{name}</Title>
           {/* TODO: Make this clickable and opens in Instagram */}
-          {socialMediaHandle && (
+          {!!socialMediaHandle && (
             <Callout color="grey" marginBottom="half">
               👤 {socialMediaHandle}
             </Callout>
           )}
           {/* TODO: Make this clickable, redirect to skate park details somehow. Maybe refer by skatepark ID??? */}
-          {homeSkatepark && <Body marginBottom="half">🏠 {homeSkatepark}</Body>}
+          {!!homeSkatepark && (
+            <Body marginBottom="half">🏠 {homeSkatepark}</Body>
+          )}
         </Flex>
       </Flex>
-      <View paddingX="one" paddingY="half">
-        <Body>{tagline || "Add a tagline!"}</Body>
-      </View>
+      {!!tagline && (
+        <View paddingX="one" paddingY="half">
+          <Body>{tagline}</Body>
+        </View>
+      )}
     </View>
   );
 };
