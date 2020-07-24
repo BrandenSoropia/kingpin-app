@@ -16,6 +16,7 @@ import StorybookUIRoot from "./storybook";
 // Features
 import ProfileConnectedNavigator from "./Profile";
 import SkateparkFinderConnectedNavigator from "./SkateparkFinder";
+import TrickerTrackerConnectedNavigator from "./TrickTracker";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -48,6 +49,15 @@ const App = () => {
                 options={{
                   tabBarIcon: ({ color, size }) => (
                     <Ionicons name="md-person" size={size} color={color} />
+                  ),
+                }}
+              />
+              <Tab.Screen
+                name="Trick Tracker"
+                component={TrickerTrackerConnectedNavigator}
+                options={{
+                  tabBarIcon: ({ color, size }) => (
+                    <Ionicons name="ios-list-box" size={size} color={color} />
                   ),
                 }}
               />

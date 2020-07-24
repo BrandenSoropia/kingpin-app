@@ -4,5 +4,9 @@ import TrickTracker from "./TrickTracker";
 import { mockFormattedTricks } from "./state/__mocks__/mock-state";
 
 storiesOf("Trick Tracker", module).add("Main Screen", () => (
-  <TrickTracker tricks={mockFormattedTricks} />
+  <TrickTracker
+    tricks={mockFormattedTricks}
+    setTricks={() => {}}
+    setSelectedTrickId={() => {}}
+  />
 ));

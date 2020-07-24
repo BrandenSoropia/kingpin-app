@@ -3,7 +3,7 @@ import { TrickListItem } from "./components";
 import { View, Title, FlatList } from "ui-kit";
 import PropTypes from "prop-types";
 
-const TrickTracker = ({ tricks }) => {
+const TrickTracker = ({ tricks, setTricks, setSelectedTrickId }) => {
   return (
     <View>
       <FlatList
@@ -17,8 +17,9 @@ const TrickTracker = ({ tricks }) => {
           <TrickListItem
             key={`trick-${trick.id}`}
             {...trick}
-            // TODO: Go to trick details page
-            onPress={() => {}}
+            onPress={() => {
+              setSelectedTrickId(trick.id);
+            }}
             isLastOfType={idx === tricks.length - 1}
           />
         )}
@@ -34,6 +35,8 @@ TrickTracker.propTypes = {
       name: PropTypes.string,
     })
   ),
+  setTricks: PropTypes.func.isRequired,
+  setSelectedTrickId: PropTypes.func.isRequired,
 };
 
 export default TrickTracker;

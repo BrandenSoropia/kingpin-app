@@ -11,7 +11,9 @@ import { trickPropTypes, trickDefaultProps } from "../prop-types";
 
 const ResourceLink = WebLinkWrapper(PrimaryTouchableOpacity);
 
-const TrickDetails = ({ title, description, image, fallbackImage, links }) => {
+const TrickDetails = ({ details }) => {
+  const { title, description, image, fallbackImage, links } = details;
+
   return (
     <ScrollView>
       <Image
@@ -33,7 +35,7 @@ const TrickDetails = ({ title, description, image, fallbackImage, links }) => {
 };
 
 TrickDetails.propTypes = {
-  trick: trickPropTypes,
+  details: trickPropTypes,
 };
 
 TrickDetails.defaultProps = {
