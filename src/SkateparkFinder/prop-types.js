@@ -17,6 +17,4 @@ export const skateparkPropTypes = PropTypes.shape({
   address: addressPropTypes,
 });
 
-export const skateparksPropTypes = PropTypes.arrayOf({
-  skateparkPropTypes,
-});
+export const skateparksPropTypes = PropTypes.arrayOf(skateparkPropTypes);
