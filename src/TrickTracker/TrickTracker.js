@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { TrickListItem } from "./components";
-import { View, Title, FlatList } from "ui-kit";
+import { View, Title, FlatList, Body } from "ui-kit";
 import PropTypes from "prop-types";
+import trickData from "common/data/tricks.json";
 
-const TrickTracker = ({ tricks, setTricks, setSelectedTrickId }) => {
+const TrickTracker = ({
+  tricks,
+  setTricks,
+  setSelectedTrickId,
+  navigation,
+}) => {
+  useEffect(() => {
+    setTricks(trickData.tricks);
+  }, [setTricks]);
+
+  if (!tricks) {
+    return <Body>Loading...</Body>;
+  }
+
   return (
     <View>
       <FlatList
@@ -15,14 +29,15 @@ const TrickTracker = ({ tricks, setTricks, setSelectedTrickId }) => {
         data={tricks}
         renderItem={({ item: trick, idx }) => (
           <TrickListItem
-            key={`trick-${trick.id}`}
             {...trick}
             onPress={() => {
               setSelectedTrickId(trick.id);
+              navigation.navigate("Trick Tracker", { screen: "Trick Details" });
             }}
             isLastOfType={idx === tricks.length - 1}
           />
         )}
+        keyExtractor={(item) => item.id}
       />
     </View>
   );
@@ -37,6 +52,9 @@ TrickTracker.propTypes = {
   ),
   setTricks: PropTypes.func.isRequired,
   setSelectedTrickId: PropTypes.func.isRequired,
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func,
+  }).isRequired,
 };
 
 export default TrickTracker;

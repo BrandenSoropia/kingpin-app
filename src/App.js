@@ -35,7 +35,7 @@ const App = () => {
               }}
             >
               <Tab.Screen
-                name="Skatepark"
+                name="Skatepark Finder"
                 component={SkateparkFinderConnectedNavigator}
                 options={{
                   tabBarIcon: ({ color, size }) => (

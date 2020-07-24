@@ -9,10 +9,10 @@ import {
 } from "ui-kit";
 import { trickPropTypes, trickDefaultProps } from "../prop-types";
 
-const ResourceLink = WebLinkWrapper(PrimaryTouchableOpacity);
+const WebLink = WebLinkWrapper(PrimaryTouchableOpacity);
 
 const TrickDetails = ({ details }) => {
-  const { title, description, image, fallbackImage, links } = details;
+  const { name, description, image, fallbackImage, links } = details;
 
   return (
     <ScrollView>
@@ -22,13 +22,13 @@ const TrickDetails = ({ details }) => {
         height={300}
         marginBottom="one"
       />
-      <Title marginBottom="one">{title}</Title>
+      <Title marginBottom="one">{name}</Title>
       <Body marginBottom="two">{description}</Body>
       {/* TODO: If time, rework links to include CTA and href */}
       {links.map((href) => (
-        <ResourceLink href={href}>
+        <WebLink href={href} key={`web-link-${href}`}>
           <Body textAlign="center">Read or watch a tutorial here</Body>
-        </ResourceLink>
+        </WebLink>
       ))}
     </ScrollView>
   );

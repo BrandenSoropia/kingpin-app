@@ -18,11 +18,11 @@ const TrickerTrackerConnectedNavigator = () => {
   return (
     <TrickTrackerStack.Navigator>
       <TrickTrackerStack.Screen
-        name="Trick Tracker"
+        name="Trick List"
         component={ConnectedTrickTracker}
       />
       <TrickTrackerStack.Screen
-        name="Details"
+        name="Trick Details"
         component={ConnectedTrickDetails}
       />
     </TrickTrackerStack.Navigator>

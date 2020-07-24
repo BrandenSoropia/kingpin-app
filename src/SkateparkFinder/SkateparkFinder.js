@@ -30,11 +30,12 @@ const SkateparkFinder = ({
         data={skateparks}
         renderItem={({ item: skatepark, idx }) => (
           <SkateparkListItem
-            key={`skatepark-list-item${skatepark.id}`}
             {...skatepark}
             onPress={() => {
               setSelectedSkatepark(skatepark.id);
-              navigation.navigate("Details", { screen: "Details" });
+              navigation.navigate("Skatepark Finder", {
+                screen: "Skatepark Details",
+              });
             }}
             isLastOfType={idx === skateparks.length - 1}
           />

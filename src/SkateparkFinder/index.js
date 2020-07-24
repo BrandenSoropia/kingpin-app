@@ -21,11 +21,11 @@ const SkateparkFinderConnectedNavigator = () => {
   return (
     <SkateparkFinderStack.Navigator>
       <SkateparkFinderStack.Screen
-        name="Finder"
+        name="Search"
         component={ConnectedSkateparkFinder}
       />
       <SkateparkFinderStack.Screen
-        name="Details"
+        name="Skatepark Details"
         component={ConnectedSkateparkDetails}
       />
     </SkateparkFinderStack.Navigator>

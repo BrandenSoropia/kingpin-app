@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 export const trickPropTypes = PropTypes.shape({
-  title: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   image: PropTypes.string,
   description: PropTypes.string.isRequired,
   fallbackImage: PropTypes.number,

@@ -8,5 +8,8 @@ storiesOf("Trick Tracker", module).add("Main Screen", () => (
     tricks={mockFormattedTricks}
     setTricks={() => {}}
     setSelectedTrickId={() => {}}
+    navigation={{
+      navigate: () => {},
+    }}
   />
 ));
