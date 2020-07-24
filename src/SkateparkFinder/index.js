@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { selectSkateparks, setSkateparks, setSelectedSkatepark } from "./state";
 import SkateparkFinder from "./SkateparkFinder";
-import ConnectedSkateparkDetails from "./Details";
+import ConnectedSkateparkDetails from "./SkateparkDetails";
 import { createStackNavigator } from "@react-navigation/stack";
 
 const SkateparkFinderStack = createStackNavigator();

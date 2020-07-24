@@ -7,7 +7,7 @@ function loadStories() {
 	require('../Profile/Edit/Edit.stories');
 	require('../Profile/Profile.stories');
 	require('../Profile/components/Details.stories');
-	require('../SkateparkFinder/Details/SkateparkDetails.stories');
+	require('../SkateparkFinder/SkateparkDetails/SkateparkDetails.stories');
 	require('../SkateparkFinder/SkateparkFinder.stories');
 	require('../SkateparkFinder/components/SkateparkListItem.stories');
 	require('../TrickTracker/TrickDetails/TrickDetails.stories');
@@ -19,7 +19,7 @@ const stories = [
 	'../Profile/Edit/Edit.stories',
 	'../Profile/Profile.stories',
 	'../Profile/components/Details.stories',
-	'../SkateparkFinder/Details/SkateparkDetails.stories',
+	'../SkateparkFinder/SkateparkDetails/SkateparkDetails.stories',
 	'../SkateparkFinder/SkateparkFinder.stories',
 	'../SkateparkFinder/components/SkateparkListItem.stories',
 	'../TrickTracker/TrickDetails/TrickDetails.stories',
