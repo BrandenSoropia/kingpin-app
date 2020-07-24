@@ -73,3 +73,12 @@ export const mockFormattedTricks = [
     links: ["https://brailleskateboarding.com/how-to-kickflip/"],
   },
 ];
+
+export const mockSelectedTrick = mockFormattedTricks[1];
+
+export const mockAppState = {
+  trickTracker: {
+    tricks: mockFormattedTricks,
+    selectedTrickId: mockSelectedTrick.id,
+  },
+};

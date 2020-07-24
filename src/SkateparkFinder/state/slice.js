@@ -7,7 +7,7 @@ export const initialState = {
 
 const skateparkFinderSlice = createSlice({
   name: "skateparkFinder",
-  initialState: initialState,
+  initialState,
   reducers: {
     setSkateparks: {
       reducer: (state, { payload }) => ({
