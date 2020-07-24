@@ -7,37 +7,45 @@ import PopShuvitImage from "../../assets/pop-shuvit.jpg";
 import HeelFlipImage from "../../assets/heel-flip.jpg";
 import KickFlipImage from "../../assets/kick-flip.jpg";
 
-export const mockFormattedTricks = {
-  "trick-0": {
+export const mockFormattedTricks = [
+  {
+    id: "trick-0",
     name: "Pushing/Riding",
     fallbackImage: PushingRidingImage,
   },
-  "trick-1": {
+  {
+    id: "trick-1",
     name: "Ollie",
     fallbackImage: OllieImage,
   },
-  "trick-2": {
+  {
+    id: "trick-2",
     name: "Frontside 180",
     fallbackImage: Frontside180Image,
   },
-  "trick-3": {
+  {
+    id: "trick-3",
     name: "Backside 180",
     fallbackImage: Backside180Image,
   },
-  "trick-4": {
+  {
+    id: "trick-4",
     name: "Shuvit",
     fallbackImage: ShuvitImage,
   },
-  "trick-5": {
+  {
+    id: "trick-5",
     name: "Pop Shuvit",
     fallbackImage: PopShuvitImage,
   },
-  "trick-6": {
+  {
+    id: "trick-6",
     name: "Heel Flip",
     fallbackImage: HeelFlipImage,
   },
-  "trick-7": {
+  {
+    id: "trick-7",
     name: "Kick Flip",
     fallbackImage: KickFlipImage,
   },
-};
+];

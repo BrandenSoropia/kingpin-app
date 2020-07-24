@@ -40,7 +40,7 @@ const SkateparkFinder = ({
           />
         )}
         keyExtractor={(item) => item.id}
-      ></FlatList>
+      />
     </View>
   );
 };
