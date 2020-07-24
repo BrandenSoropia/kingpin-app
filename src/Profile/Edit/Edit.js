@@ -112,7 +112,6 @@ const Edit = ({
           // TODO: Clean this up... Formik or similar libraries would handle this so much better
           // Got really tired and lazy so leaving this as is...
           if (name !== updatedName) {
-            console.log("#hi", updatedName);
             setName(updatedName);
           }
 

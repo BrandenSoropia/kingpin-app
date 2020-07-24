@@ -15,8 +15,6 @@ const Details = ({
   socialMediaHandle,
   homeSkatepark,
 }) => {
-  console.log(name, profilePicture, tagline, socialMediaHandle, homeSkatepark);
-
   return (
     <View>
       <Flex flexDirection="row" marginBottom="two">
