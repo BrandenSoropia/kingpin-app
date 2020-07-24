@@ -9,5 +9,6 @@ storiesOf("Profile", module).add("View Profile", () => (
     tagline="Raised on the Streets. Pro Hustler."
     homeSkatepark="Dunbat Skatepark"
     navigation={{ navigate: () => {} }}
+    setName={() => {}}
   />
 ));

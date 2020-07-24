@@ -26,16 +26,16 @@ const Edit = ({
   navigation,
 }) => {
   // Future TODO: Confirm back if unsaved changes
-  const [updatedName, setUpdatedName] = useState(name);
-  const [updatedTagline, setUpdatedTagline] = useState(tagline);
+  const [updatedName, setUpdatedName] = useState(name || "");
+  const [updatedTagline, setUpdatedTagline] = useState(tagline || "");
   const [updatedSocialMediaHandle, setUpdatedSocialMediaHandle] = useState(
-    socialMediaHandle
+    socialMediaHandle || ""
   );
   const [updatedProfilePicture, setUpdatedProfilePicture] = useState(
-    profilePicture
+    profilePicture || ""
   );
   const [updateHomeSkatepark, setUpdatedHomeSkatepark] = useState(
-    homeSkatepark
+    homeSkatepark || ""
   );
 
   // If time, figure how to ask for permissions only when the user picks take a photo or use from library

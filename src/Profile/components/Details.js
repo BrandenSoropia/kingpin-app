@@ -23,15 +23,13 @@ const Details = ({
         <Flex flexShrink={1} marginLeft="three" alignSelf="center">
           <Title marginBottom="one">{name}</Title>
           {/* TODO: Make this clickable and opens in Instagram */}
-          {socialMediaHandle !== "" && (
+          {socialMediaHandle && (
             <Callout color="grey" marginBottom="half">
               👤 {socialMediaHandle}
             </Callout>
           )}
           {/* TODO: Make this clickable, redirect to skate park details somehow. Maybe refer by skatepark ID??? */}
-          {homeSkatepark !== "" && (
-            <Body marginBottom="half">🏠 {homeSkatepark}</Body>
-          )}
+          {homeSkatepark && <Body marginBottom="half">🏠 {homeSkatepark}</Body>}
         </Flex>
       </Flex>
       <View paddingX="one" paddingY="half">

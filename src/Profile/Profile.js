@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Details } from "./components";
 import { Flex, PrimaryTouchableOpacity, Body } from "ui-kit";
 import PropTypes from "prop-types";
@@ -11,7 +11,16 @@ const Profile = ({
   socialMediaHandle,
   homeSkatepark,
   navigation,
+  setName,
 }) => {
+  useEffect(() => {
+    setName("Brock the Cat");
+  });
+
+  if (!name) {
+    return <Body>Loading...</Body>;
+  }
+
   return (
     <Flex flex={1} paddingX="two" paddingY="two">
       <Details
@@ -38,6 +47,7 @@ Profile.propTypes = {
     navigate: PropTypes.func,
   }).isRequired,
   ...profilePropTypes,
+  setName: PropTypes.func.isRequired,
 };
 
 Profile.defaultProps = {

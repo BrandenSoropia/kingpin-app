@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import {
+  setName,
   selectName,
   selectProfilePicture,
   selectTagline,
@@ -21,7 +22,9 @@ const ConnectedProfile = connect(
     socialMediaHandle: selectSocialMediaHandle(state),
     homeSkatepark: selectHomeSkatepark(state),
   }),
-  null
+  {
+    setName,
+  }
 )(Profile);
 
 const ProfileConnectedNavigator = () => {
