@@ -1,18 +1,19 @@
 import React from "react";
 import { storiesOf } from "@storybook/react-native";
-import Details from "./Details";
+import TrickDetails from "./TrickDetails";
 import { mockFormattedTricks } from "../state/__mocks__/mock-state";
 
 const trick = mockFormattedTricks[1];
 
 storiesOf("Trick Tracker/Trick Details", module).add(
-  "View Full Details",
+  "View Full Trick Details",
   () => (
-    <Details
+    <TrickDetails
       title={trick.name}
       description={trick.description}
       resources={trick.resources}
       fallbackImage={trick.fallbackImage}
+      links={trick.links}
     />
   )
 );

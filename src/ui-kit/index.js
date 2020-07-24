@@ -5,3 +5,4 @@ export { default as Image } from "./Image";
 export * from "./buttons";
 export { default as StorybookButton } from "./StorybookButton";
 export * from "./inputs";
+export * from "./links";

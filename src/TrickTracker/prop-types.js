@@ -5,7 +5,7 @@ export const trickPropTypes = PropTypes.shape({
   image: PropTypes.string,
   description: PropTypes.string.isRequired,
   fallbackImage: PropTypes.number,
-  resources: PropTypes.arrayOf(PropTypes.string),
+  links: PropTypes.arrayOf(PropTypes.string),
 });
 
 export const trickDefaultProps = {
