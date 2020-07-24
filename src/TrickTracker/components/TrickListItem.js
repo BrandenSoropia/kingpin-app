@@ -47,7 +47,7 @@ TrickListItem.propTypes = {
 };
 
 TrickListItem.defaultProps = {
-  image: "",
+  image: null,
   fallbackImage: null,
 };
 
