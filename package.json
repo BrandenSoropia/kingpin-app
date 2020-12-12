@@ -41,18 +41,18 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
-    "@storybook/addon-actions": "^5.3.19",
-    "@storybook/addon-links": "^5.3.19",
-    "@storybook/addons": "^5.3.19",
-    "@storybook/react-native": "^5.3.19",
-    "@storybook/react-native-server": "^5.3.19",
+    "@storybook/addon-actions": "^6.1.11",
+    "@storybook/addon-links": "^6.1.11",
+    "@storybook/addons": "^6.1.11",
+    "@storybook/react-native": "^5.3.23",
+    "@storybook/react-native-server": "^5.3.23",
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "babel-plugin-styled-components": "^1.10.7",
     "babel-preset-expo": "~8.1.0",
     "jest-expo": "^38.0.2",
     "react-native-debugger-open": "^0.3.25",
-    "react-native-storybook-loader": "^1.8.1"
+    "react-native-storybook-loader": "^2.0.2"
   },
   "private": true,
   "resolutions": {
